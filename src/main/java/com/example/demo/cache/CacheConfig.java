@@ -43,7 +43,7 @@ public class CacheConfig extends CachingConfigurerSupport {
         config = config.entryTtl(Duration.ofSeconds(60))     // 设置缓存的默认过期时间，也是使用Duration设置
                 .disableCachingNullValues();     // 不缓存空值
 
-        RedisCacheManager cacheManager = RedisCacheManager.builder(connectionFactory).cacheDefaults(config).build();
+        RedisCacheManager cacheManager = RedisCacheManager.builder(connectionFactory).cacheDefaults(config).transactionAware().build();
 
         // 设置一个初始化的缓存空间set集合
         /*Set<String> cacheNames =  new HashSet<>();
