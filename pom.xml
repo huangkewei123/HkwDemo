@@ -25,7 +25,6 @@
     </properties>
 
     <dependencies>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -42,6 +41,13 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-cache</artifactId>
         </dependency>
+        <!-- 日志 -->
+        <!--<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-log4j</artifactId>
+            <version>1.3.8.RELEASE</version>
+        </dependency>-->
+
         <!--  redis -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -62,8 +68,29 @@
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>
             <artifactId>mybatis-spring-boot-starter</artifactId>
-            <version>1.3.0</version>
+            <version>1.3.2</version>
         </dependency>
+
+        <!-- shiro -->
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-spring</artifactId>
+            <version>1.4.0</version>
+        </dependency>
+
+        <!-- 导入java ee jar 包 -->
+        <!--<dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>8.0</version>
+        </dependency>-->
+        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.7</version>
+        </dependency>
+
 
         <!--pagehelper -->
         <dependency>
@@ -72,10 +99,31 @@
             <version>1.2.3</version>
         </dependency>
 
+        <!-- JSON包 -->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
-            <version>1.2.31</version>
+            <version>1.2.47</version>
+        </dependency>
+
+        <dependency>
+            <groupId>net.sf.json-lib</groupId>
+            <artifactId>json-lib</artifactId>
+            <version>2.4</version>
+        </dependency>
+
+
+        <!-- httpclient -->
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5.3</version>
+        </dependency>
+        <!-- 提供FileBody、StringBody和MultipartEntity 使用httpClient上传文件需要的类 -->
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpmime</artifactId>
+            <version>4.5.3</version>
         </dependency>
 
         <dependency>
@@ -85,12 +133,12 @@
         </dependency>
 
         <!-- 热部署 -->
-        <!--<dependency>
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
             <optional>true</optional>
             <scope>true</scope>
-        </dependency>-->
+        </dependency>
 
         <dependency>
             <groupId>junit</groupId>
@@ -110,6 +158,41 @@
             <version>RELEASE</version>
             <scope>compile</scope>
         </dependency>
+
+        <!-- servlet 依赖 -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+        </dependency>
+
+        <!-- tomcat 的支持.-->
+        <!--<dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-jasper</artifactId>
+
+        </dependency>-->
+        <!--  thymeleaf模板 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+
+        <!--thymeleaf-shiro标签-->
+        <dependency>
+            <groupId>com.github.theborakompanioni</groupId>
+            <artifactId>thymeleaf-extras-shiro</artifactId>
+            <version>1.2.1</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -117,18 +200,29 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <!--fork :  如果没有该项配置则devtools不会起作用，即应用不会restart -->
+                    <fork>true</fork>
+                </configuration>
             </plugin>
         </plugins>
         <!--<resources>
+            <resource>
+    　　　　　　<directory>src/main/resources</directory>
+    　　　　</resource>
             <resource>
                 <directory>src/mian/java</directory>
                 <includes>
                     <include>**/*.xml</include>
                 </includes>
             </resource>
-            <resource>
-    　　　　　　<directory>src/main/resources</directory>
-    　　　　</resource>
         </resources>-->
     </build>
 

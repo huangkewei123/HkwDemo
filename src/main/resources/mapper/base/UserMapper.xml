@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.demo.manipulation.mapper.base.UserMapper">
+    <resultMap id="BaseResultMap" type="com.example.demo.manipulation.entity.base.User">
+        <id column="id" property="id" jdbcType="VARCHAR" />
+        <result column="username" property="username" jdbcType="VARCHAR" />
+        <result column="password" property="password" jdbcType="CHAR" />
+        <result column="state" property="state" jdbcType="VARCHAR" />
+        <result column="createTime" property="createTime" jdbcType="TIMESTAMP" />
+    </resultMap>
+    <sql id="Base_Column_List">
+        id, username, password, state, createTime
+    </sql>
+    <select id="selectByUsername" resultMap="BaseResultMap" parameterType="string">
+        select
+        <include refid="Base_Column_List" />
+        from user
+        <where>
+        	username = #{username}
+        </where>
+    </select>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="int">
+        select
+        <include refid="Base_Column_List" />
+        from user
+        where id = #{id}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="string">
+        delete from user
+        where id = #{id}
+    </delete>
+    <insert id="insert" parameterType="com.example.demo.manipulation.entity.base.User">
+        insert into user (id, username, password,
+        state, createTime)
+        values (#{id}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=CHAR},
+        #{state,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP})
+    </insert>
+    <insert id="insertSelective" parameterType="com.example.demo.manipulation.entity.base.User">
+        insert into user
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="username != null">
+                username,
+            </if>
+            <if test="password != null">
+                password,
+            </if>
+            <if test="state != null">
+                state,
+            </if>
+            <if test="createTime != null">
+                createTime,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id},
+            </if>
+            <if test="username != null">
+                #{username,jdbcType=VARCHAR},
+            </if>
+            <if test="password != null">
+                #{password,jdbcType=CHAR},
+            </if>
+            <if test="state != null">
+                #{state,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                #{createTime,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.example.demo.manipulation.entity.base.User">
+        update user
+        <set>
+            <if test="username != null">
+                username = #{username,jdbcType=VARCHAR},
+            </if>
+            <if test="password != null">
+                password = #{password,jdbcType=CHAR},
+            </if>
+            <if test="state != null">
+                state = #{state,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                createTime = #{createTime,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.example.demo.manipulation.entity.base.User">
+        update user
+        set username = #{username,jdbcType=VARCHAR},
+        password = #{password,jdbcType=CHAR},
+        state = #{state,jdbcType=VARCHAR},
+        createTime =
+        #{createTime,jdbcType=TIMESTAMP}
+        where id = #{id}
+    </update>
+
+    <!-- 用户登录验证查询 -->
+    <select id="authentication" resultMap="BaseResultMap" parameterType="com.example.demo.manipulation.entity.base.User">
+        select
+        <include refid="Base_Column_List" />
+        from user
+        where username = #{record.username,jdbcType=VARCHAR} and password = #{record.password,jdbcType=CHAR}
+    </select>
+
+    <!--<select id="findList" resultType="com.example.demo.manipulation.entity.base.User" parameterType="Page">
+        select * from user 
+        <where>
+        	1 = 1
+        	<if test="paramModel != null">
+        		<if test="paramModel.username != null and paramModel.username != ''"> and username like concat ('%',#{paramModel.username} ,'%') </if>
+        		<if test="paramModel.state != null and paramModel.state != ''" > and state = #{paramModel.state} </if>
+        		<if test="params.sdate != null and params.sdate != ''"> and createTime >= #{params.sdate} </if>
+        		<if test="params.edate != null and params.edate != ''"> <![CDATA[and createTime <= #{params.edate} ]]></if>
+        	</if>
+        </where>
+        
+    </select>-->
+    
+    <!-- 根据角色ID查询拥有此权限的用户 -->
+    <!--<select id="findUserByRoleId" resultType="com.example.demo.manipulation.entity.base.User" parameterType="Page">
+        select b.* from user b
+		left join 
+		user_role c on b.id = c.user_id
+        <where>
+        	1 = 1
+        	and b.id != '000000'
+        	and c.role_id = #{paramModel.id}
+        </where>
+    </select>-->
+    
+    <!--<select id="findUnallotByRole" resultType="com.example.demo.manipulation.entity.base.User" parameterType="Page">
+    	select u.* from user u 
+	    	where
+	    	u.state = 1  and u.id != '000000'
+	    	and u.id not in (
+	    	select u2.id from user u2 left join user_role rr on u2.id = rr.user_Id 
+		    	<where>
+		  			<if test="params.roleId != null"> rr.role_id = #{params.roleId} </if>
+		  		</where>
+	  		)
+	  		<where>
+	  			<if test="paramModel != null">
+			  		<if test="paramModel.username != null"> and u.username like concat( '%', #{paramModel.username} ,'%') </if>
+		  		</if>
+	    	</where>
+    </select>-->
+    
+</mapper>

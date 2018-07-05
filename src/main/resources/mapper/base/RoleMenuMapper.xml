@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.manipulation.mapper.base.RoleMenuMapper">
+
+	<resultMap type="com.example.demo.manipulation.entity.base.RoleMenu" id="roleMenuResultMap">
+		<id column="id" property="id"/>
+		<result column="roleId" property="roleId"/>
+		<result column="menuId" property="menuId"/>
+		<result column="remark" property="remark"/>
+	</resultMap>
+
+	<!-- 找最大ID -->
+	<select id="findMaxId" resultType="int">
+		select MAX(id) MID FROM role_menu
+	</select>
+	
+	<!-- 分页查所有 -->
+	<select id="roleMenulistPage" resultMap="roleMenuResultMap" useCache="false">
+		select * from role_menu 
+	</select>
+		
+	<!-- 列出所有RoleMenu -->
+	<select id="listAllRoleManu" resultMap="roleMenuResultMap">
+		select *
+		from role_menu
+	</select>
+	
+	<!-- 新增RoleMenu -->
+	<insert id="insertRoleMenu" parameterType="com.example.demo.manipulation.entity.base.RoleMenu">
+		insert into role_menu (
+			id,
+			roleId,
+			menuId,
+			remark
+		) values (
+			#{id},
+			#{roleId},
+			#{menuId},
+			#{remark}
+		)
+	</insert>
+	
+	<!-- 修改RoleMenu -->
+	<update id="editRoleMenu" parameterType="com.example.demo.manipulation.entity.base.RoleMenu">
+		update role_menu set 
+			roleId =#{roleId},
+			menuId  =#{menuId} ,
+			remark =#{remark}
+		where 
+			id=#{id}
+	</update>
+	
+	<!-- 物理删除RoleMenu -->
+	<delete id="deleteRoleMenuById" parameterType="string">
+		delete from role_menu 
+		where id=#{id}
+	</delete>
+	
+	<!-- 根据角色Id和菜单Id物理删除RoleMenu -->
+	<delete id="deleteRoleMenuByRIDAndMID" parameterType="map">
+		delete from role_menu 
+		where roleId=#{roleId} and menuId=#{menuId}
+	</delete>
+	<!-- 根据角色Id和菜单Id查询RoleMenu -->
+	<select id="selectRoleMenuByRIDAndMID" parameterType="map" resultMap="roleMenuResultMap">
+		delete from role_menu 
+		where roleId=#{roleId} and menuId=#{menuId}
+	</select>
+</mapper>

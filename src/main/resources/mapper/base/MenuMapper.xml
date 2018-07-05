@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.manipulation.mapper.base.MenuMapper">
+
+	<resultMap type="com.example.demo.manipulation.entity.base.Menu" id="menuResultMap">
+		<id column="menuId" property="menuId" />
+		<result column="title" property="title" />
+		<result column="menuCode" property="menuCode" />
+		<result column="href" property="href" />
+		<result column="icon" property="icon" />
+	</resultMap>
+
+	<!-- ztree -->
+	<resultMap type="com.example.demo.manipulation.entity.base.Menu" id="menuZtreeResultMap">
+		<id column="menuId" property="menuId" />
+		<result column="title" property="title" />
+		<result column="href" property="href" />
+		<result column="menuId" property="menuId" />
+		<result column="menuCode" property="menuCode" />
+		<result column="icon" property="icon" />
+		<result column="pid" property="pid"></result>
+		<result column="pname" property="pname"></result>
+		<result column="seq" property="seq"></result>
+	</resultMap>
+
+	<select id="findMaxId" resultType="int">
+		select
+		MAX(menuId) MID FROM menu
+	</select>
+
+	<select id="listAllParentMenu" resultMap="menuResultMap">
+		select * from menu
+		where pid = '0'
+	</select>
+
+	<select id="getMenuById" parameterType="string" resultMap="menuResultMap">
+		select
+		menuId,
+		title,
+		href,
+		pid
+		from menu
+		where menuId=#{menuId}
+	</select>
+
+	<insert id="add" parameterType="com.example.demo.manipulation.entity.base.Menu">
+		insert into menu (
+		menuId,
+		title,
+		menuCode,
+		href,
+		pid,
+		pname,
+		seq,
+		level,
+		icon
+		) values (
+		#{menuId},
+		#{title},
+		#{menuCode},
+		#{href},
+		#{pid},
+		#{pname},
+		#{seq},
+		#{level},
+		#{icon}
+		)
+	</insert>
+
+	<update id="updateMenu" parameterType="com.example.demo.manipulation.entity.base.Menu">
+		update menu 
+		title =#{title},
+		href =#{href},
+		menuCode =#{menuCode},
+		menuId =#{menuId},
+		pid = #{pid}
+		where
+		menuId=#{menuId}
+	</update>
+
+	<update id="editicon" parameterType="com.example.demo.manipulation.entity.base.Menu">
+		update menu set
+		icon=#{icon}
+		where menuId=#{menuId}
+	</update>
+
+
+	<delete id="delete" parameterType="int">
+		delete from menu
+		where menuId=#{menuId}
+	</delete>
+
+	<select id="findPage" parameterType="Menu" resultType="com.example.demo.manipulation.entity.base.Menu">
+		select * from menu 
+		<where>
+			1 = 1
+			<if test="title != null"> and title like concat ( '%' , #{title} ,'%')</if>
+			<if test="href != null"> and href = #{href}</if>
+			<if test="menuCode != null"> and menuCode = #{menuCode} </if>
+			<if test="pid != null"> and pid = #{pid}</if>
+			<if test="seq != null"> and seq = #{seq}</if>
+			<if test="level != null"> and level = #{level}</if>
+		</where>
+	</select>
+
+	<!-- 查询所有主目录 -->
+	<select id="findAllParentMenu" parameterType="string"
+		resultMap="menuResultMap">
+		SELECT m.* FROM menu m
+		where pid = '0' 		
+		order by m.seq
+	</select>
+	
+	<!--根据用户id返回角色自己对应的主目录 -->
+	<select id="userListParentMenu" parameterType="string"
+		resultMap="menuResultMap">
+		SELECT m.* FROM menu m
+		where pid = '0' AND m.menuId
+		in
+		(SELECT r.menuId from role_menu r
+		WHERE r.roleId
+		in
+		(select r.role_id from user u
+		left join 
+		user_role r on r.user_id = u.id
+		where u.id = #{userId}))
+		order by m.seq
+	</select>
+	<select id="listSubMenuByParentId" parameterType="string"
+		resultMap="menuResultMap">
+		select * from menu
+		where pid = #{pid} order by seq
+	</select>
+
+	<!--根据角色id返回角色对应的主目录 -->
+	<select id="roleListParentMenu" parameterType="string"
+		resultMap="menuResultMap">
+		SELECT m.* FROM menu m
+		where pid = '0' AND m.menuId
+		in
+		(SELECT r.menuId from role_menu r
+		WHERE r.roleId = #{roleId})
+		order by m.seq
+	</select>
+
+	<!--根据用户id和主目录返回角色自己对应的从目录 -->
+	<select id="userListSubMenuByParentId" parameterType="map"
+		resultMap="menuResultMap">
+		SELECT m.* FROM menu m
+		where pid = #{pid} AND m.menuId
+		in
+		(SELECT r.menuId from role_menu r
+		WHERE r.roleId
+		in
+		(select r.role_id from user u
+		left join 
+		user_role r on r.user_id = u.id
+		where u.id = #{userId}))
+		order by m.seq
+	</select>
+
+	<select id="notRoleListSubMenuByParentId" parameterType="map"
+		resultMap="menuResultMap">
+		SELECT m.* FROM menu m
+		where pid =#{pid} AND m.menuId
+		not in
+		(SELECT r.menuId from role_menu r
+		WHERE r.roleId = #{roleId})
+		order by m.seq
+	</select>
+	<!--根据角色id和主目录返回角色自己对应的从目录 -->
+	<select id="roleListSubMenuByParentId" parameterType="map"
+		resultMap="menuResultMap">
+		SELECT m.* FROM menu m
+		where pid = #{pid} AND m.menuId
+		in
+		(SELECT r.menuId from role_menu r
+		WHERE r.roleId = #{roleId})
+		order by m.seq
+	</select>
+	
+	<select id="subMenuByParentId" parameterType="int" resultMap="menuResultMap">
+		SELECT m.* FROM menu m
+		where pid = #{pid}
+		order by m.seq
+	</select>
+	
+	<select id="findList" parameterType="com.example.demo.manipulation.entity.base.Menu" resultType="com.example.demo.manipulation.entity.base.Menu">
+		SELECT m.* FROM menu m
+		<where>
+			1 = 1
+			<if test="title != null"> and title like concat ( '%' , #{title} ,'%')</if>
+			<if test="href != null"> and title = #{href}</if>
+			<if test="menuCode != null"> and menuCode = #{menuCode} </if>
+			<if test="pid != null"> and pid = #{pid}</if>
+			<if test="seq != null"> and seq = #{seq}</if>
+			<if test="level != null"> and level = #{level}</if>
+		</where>
+	</select>
+	
+	<!--<select id="findMenuByRole" parameterType="Page" resultType="com.example.demo.manipulation.entity.base.Menu">
+		select a.* from menu a
+		left join 
+		role_menu b on a.menuId = b.menuId
+		left join 
+		role c on c.id = b.roleId
+		<where>
+			c.id = #{params.roleId} and a.pid > 0
+			<if test="paramModel.title != null"> and a.title like concat ( '%' , #{paramModel.title} ,'%')</if>
+			<if test="paramModel.href != null"> and a.title = #{paramModel.href}</if>
+			<if test="paramModel.menuCode != null"> and a.menuCode = #{paramModel.menuCode} </if>
+			<if test="paramModel.pid != null"> and a.pid = #{paramModel.pid}</if>
+			<if test="paramModel.seq != null"> and a.seq = #{paramModel.seq}</if>
+			<if test="paramModel.level != null"> and a.level = #{paramModel.level}</if>
+		</where>
+	</select>
+	
+	<select id="findUnllotMenuByRole" parameterType="Page" resultType="com.example.demo.manipulation.entity.base.Menu">
+		select a.* from menu a
+		<where> 
+			a.menuId not in (
+			select b.menuId from role_menu b
+			left join 
+			role c on c.id = b.roleId
+			<where> 
+				c.id = #{params.roleId} 
+			</where>
+		)
+			and a.pid > 0
+			<if test="paramModel.title != null"> and a.title like concat ( '%' , #{paramModel.title} ,'%')</if>
+			<if test="paramModel.href != null"> and a.title = #{paramModel.href}</if>
+			<if test="paramModel.menuCode != null"> and a.menuCode = #{paramModel.menuCode} </if>
+			<if test="paramModel.pid != null"> and a.pid = #{paramModel.pid}</if>
+			<if test="paramModel.seq != null"> and a.seq = #{paramModel.seq}</if>
+			<if test="paramModel.level != null"> and a.level = #{paramModel.level}</if>
+		</where>
+	</select>-->
+	
+	<insert id="insertRoleMenu" parameterType="map" >
+		insert into role_menu (roleId,menuId,remark) values(#{roleId},#{menuId},#{remark})
+	</insert>
+	
+	<delete id="deleteRoleMenu" parameterType="map" >
+		delete from role_menu
+		where menuId=#{menuId} and roleId = #{roleId}
+	</delete>
+	
+	<select id="findMenuIdByRoleId" parameterType="int" resultType="map">
+		select a.menuId from role_menu a
+		left join 
+		menu b on b.menuId = a.menuId 
+		 where a.roleId = #{roleId} and b.pid = #{pid}
+	</select>
+</mapper>
