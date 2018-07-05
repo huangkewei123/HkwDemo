@@ -1,4 +1,4 @@
-package com.example.demo.cache;
+package com.example.demo.jee.cache;
 
 import com.example.demo.jee.cache.FastJsonRedisSerializer;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
