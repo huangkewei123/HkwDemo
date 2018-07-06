@@ -75,33 +75,33 @@
         page();
 
         //角色
-        function page(pageNum) {
-            var pageSize = 2;
+        function page(pageNum,pageSize) {
             //以下将以jquery.ajax为例，演示一个异步分页
             $.getJSON('/rolePage?'+$("#form").serialize(), {
                     pageNum: pageNum || 1,
-                    pageSize: pageSize
+                    pageSize: pageSize || 2
                 },
                 function (res) { //从第1页开始请求。返回的json格式可以任意定义
                     laypage.render({
                         elem: 'page', //容器。值支持id名、原生dom对象，jquery对象。【如该容器为】：<div id="page1"></div>
                         count: res.total, //数据总数
-                        limit:res.pageSize,
+                        limit:pageSize || 2,
                         curr: pageNum || 1,
-                        hash:'asd',
+                        limits:[2,4],
+                        layout:['prev','page','next','refresh','count','limit'],
+                        //hash:'hkw',
                         //first: '首页', //若不显示，设置false即可
                         //last: '尾页', //若不显示，设置false即可
                         prev: '<', //若不显示，设置false即可
                         next: '>', //若不显示，设置false即可
                         jump: function (obj,first) { //触发分页后的回调
                             if(!first){ //点击跳页触发函数自身，并传递当前页：obj.curr
-                                page(obj.pageNum);
+                                page(obj.curr,obj.limit);
                                 form.render();
                             }
                         }
                     });
                     $('#news_content').html(PackagData(res));
-                    //$('.news_list thead input[type="checkbox"]').prop("checked",false);
                     form.render();
                 });
         }

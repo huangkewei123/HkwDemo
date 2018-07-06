@@ -23,7 +23,7 @@ shiro使用了自定义过滤器com.example.demo.jee.filter.MyFormAuthentication
 还在研究
 
 #pagehelper
-已加入
+已加入,index为测试分页页面，采用ajax+layUI实现异步分页
 
 #session
 配置为15分钟过期
