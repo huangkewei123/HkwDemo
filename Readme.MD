@@ -1,12 +1,12 @@
-框架使用：SpringBoot2.0
-缓存使用：Redis
-数据层：mybatis
-权限控制：shiro
-数据库：mysql
-前端模板：thymeleaf
-分页：com.github.pagehelper
+#框架使用：SpringBoot2.0
+#缓存使用：Redis
+#数据层：mybatis
+#权限控制：shiro
+#数据库：mysql
+#前端模板：thymeleaf
+#分页：com.github.pagehelper
 
-预计前端会加入layUI
+#预计前端会加入layUI
 
 #Redis部分
 关于Redis，使用注解方式进行缓存，所在目录com.example.demo.cache，暂时还只有CacheConfig起到作用，里面设置了缓存过期时间和空值无法存储，但是**空值存储会报错**，有待解决。
@@ -23,7 +23,7 @@ shiro使用了自定义过滤器com.example.demo.jee.filter.MyFormAuthentication
 还在研究
 
 #pagehelper
-暂未使用
+已加入
 
 #session
 配置为15分钟过期

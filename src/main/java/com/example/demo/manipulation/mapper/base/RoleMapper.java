@@ -46,5 +46,7 @@ public interface RoleMapper extends GenericDao<Role, Integer> {
      * @return
      */
     public Integer deleteUserRole(Map<String, Object> map);
+
+    public List<Role> selectAllRoles(Role role);
     
 }
