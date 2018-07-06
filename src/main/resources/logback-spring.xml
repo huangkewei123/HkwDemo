@@ -86,6 +86,8 @@
     <logger name="com.example.demo" level="debug"/>
     <logger name="org.springframework.transaction" level="debug"/>
     <logger name="springframework.web" level="info"/>
+    <logger name="org.thymeleaf" level="info"/>
+
 
     <root level="INFO">
         <!--<appender-ref ref="TRACE_FILE" />-->

@@ -3,9 +3,12 @@ package com.example.demo.manipulation.controller;
 import com.alibaba.fastjson.JSONObject;
 import com.example.demo.manipulation.entity.base.Menu;
 import com.example.demo.manipulation.entity.base.Person;
+import com.example.demo.manipulation.entity.base.Role;
 import com.example.demo.manipulation.service.base.MenuService;
 import com.example.demo.manipulation.service.base.PersonService;
+import com.example.demo.manipulation.service.base.RoleService;
 import com.github.pagehelper.Page;
+import com.github.pagehelper.PageInfo;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.subject.Subject;
 import org.slf4j.Logger;
@@ -17,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
@@ -30,6 +34,9 @@ public class TestController {
 
     @Autowired
     private MenuService menuService;
+
+    @Resource
+    private RoleService roleService;
 
     @RequestMapping("/redis/set")
     @ResponseBody
@@ -80,13 +87,37 @@ public class TestController {
      * @throws Exception
      */
     @RequestMapping(value = "/index")
-    public String index() {
+    public String index(Model model) {
         Menu menu = new Menu();
         //menu.setHref("aaaa");
-        Page<Menu> page = menuService.findPage(1,2,menu);
-
+        PageInfo<Menu> page = menuService.findPage(1,2,menu);
+        model.addAttribute("menuList",page);
         logger.info("aaaaaaaaaaaa"+          JSONObject.toJSON(page).toString());
         return "index";
+    }
+
+    /**
+     * 用户登录
+     *
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping(value = "/page")
+    @ResponseBody
+    public Object page(Integer pageNum,Integer pageSize) {
+        Menu menu = new Menu();
+        //menu.setHref("aaaa");
+        PageInfo<Menu> page = menuService.findPage(pageNum,pageSize,menu);
+        logger.info("aaaaaaaaaaaa"+          JSONObject.toJSON(page).toString());
+        return page;
+    }
+
+    @RequestMapping(value = "/rolePage")
+    @ResponseBody
+    public Object rolePage(Integer pageNum,Integer pageSize,Role role) {
+        PageInfo<Role> page = roleService.selectAllRoles(pageNum,pageSize,role);
+        logger.info("bbbbbbbbbbbb"+          JSONObject.toJSON(page).toString());
+        return page;
     }
 
     @RequestMapping(value="/login")

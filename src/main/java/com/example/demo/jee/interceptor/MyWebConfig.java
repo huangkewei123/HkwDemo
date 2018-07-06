@@ -26,7 +26,7 @@ public class MyWebConfig extends WebMvcConfigurerAdapter{
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-                           registry.addInterceptor(myInterceptor).addPathPatterns("/*").excludePathPatterns("/hello/**");
+                           registry.addInterceptor(myInterceptor).addPathPatterns("/*").excludePathPatterns("/static/**");
         super.addInterceptors(registry);
     }
 }

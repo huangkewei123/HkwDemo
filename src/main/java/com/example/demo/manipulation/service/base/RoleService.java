@@ -5,6 +5,7 @@ import java.util.Map;
 
 import com.example.demo.jee.base.GenericService;
 import com.example.demo.manipulation.entity.base.Role;
+import com.github.pagehelper.PageInfo;
 
 /**
  * 角色 业务接口
@@ -36,4 +37,6 @@ public interface RoleService extends GenericService<Role, Integer> {
      * @return
      */
     public Integer deleteUserRole(String userIds, Integer roleId);
+
+    public PageInfo<Role> selectAllRoles(Integer pageNum, Integer pageSize, Role role);
 }

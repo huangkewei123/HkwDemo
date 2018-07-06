@@ -2,6 +2,7 @@ package com.example.demo.manipulation.service.base;
 
 import com.example.demo.manipulation.entity.base.Menu;
 import com.github.pagehelper.Page;
+import com.github.pagehelper.PageInfo;
 
 import java.util.List;
 import java.util.Map;
@@ -95,5 +96,5 @@ public interface MenuService {
 	 */
 	public Integer insertRoleMenu(String menuIds, Integer roleId, String pids);
 
-	public Page<Menu> findPage(int pageNo, int pageSize,Menu menu);
+	public PageInfo<Menu> findPage(Integer pageNum, Integer pageSize, Menu menu);
 }

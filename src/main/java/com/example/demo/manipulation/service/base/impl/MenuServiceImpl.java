@@ -13,6 +13,7 @@ import com.example.demo.manipulation.mapper.base.MenuMapper;
 import com.example.demo.manipulation.service.base.MenuService;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -316,8 +317,8 @@ public class MenuServiceImpl extends GenericServiceImpl<Menu, Integer> implement
 	}
 
 
-	public Page<Menu> findPage(int pageNo, int pageSize,Menu menu){
-		PageHelper.startPage(pageNo, pageSize);
-		return menuMapper.findPage(menu);
+	public PageInfo<Menu> findPage(Integer pageNum, Integer pageSize, Menu menu){
+		PageHelper.startPage(pageNum, pageSize);
+		return new PageInfo<Menu>(menuMapper.findPage(menu));
 	}
 }

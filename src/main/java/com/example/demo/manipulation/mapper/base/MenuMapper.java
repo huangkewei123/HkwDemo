@@ -7,6 +7,7 @@ import java.util.Map;
 import com.example.demo.jee.base.GenericDao;
 import com.example.demo.manipulation.entity.base.Menu;
 import com.github.pagehelper.Page;
+import com.github.pagehelper.PageInfo;
 
 public interface MenuMapper  extends GenericDao<Menu, Integer> {
 	
@@ -101,5 +102,5 @@ public interface MenuMapper  extends GenericDao<Menu, Integer> {
 	 */
 	public List<Integer> findMenuIdByRoleId(Map<String, Object> map);
 
-	public Page<Menu> findPage(Menu menu);
+	public List<Menu> findPage(Menu menu);
 }

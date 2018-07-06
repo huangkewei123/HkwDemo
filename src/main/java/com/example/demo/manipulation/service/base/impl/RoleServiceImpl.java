@@ -9,6 +9,8 @@ import com.example.demo.jee.base.GenericServiceImpl;
 import com.example.demo.manipulation.entity.base.Role;
 import com.example.demo.manipulation.mapper.base.RoleMapper;
 import com.example.demo.manipulation.service.base.RoleService;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -100,4 +102,9 @@ public class RoleServiceImpl extends GenericServiceImpl<Role, Integer> implement
 		}
     	return 1;
     }
+
+	public PageInfo<Role> selectAllRoles(Integer pageNum,Integer pageSize, Role role){
+		PageHelper.startPage(pageNum,pageSize);
+		return new PageInfo<Role>(roleMapper.selectAllRoles(role));
+	}
 }
