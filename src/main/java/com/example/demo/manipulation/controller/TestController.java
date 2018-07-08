@@ -116,6 +116,7 @@ public class TestController {
     @ResponseBody
     public Object rolePage(Integer pageNum,Integer pageSize,Role role) {
         PageInfo<Role> page = roleService.selectAllRoles(pageNum,pageSize,role);
+        logger.info("124124");
         logger.info("bbbbbbbbbbbb"+          JSONObject.toJSON(page).toString());
         return page;
     }

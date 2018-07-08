@@ -20,12 +20,13 @@ import org.apache.shiro.web.filter.authc.FormAuthenticationFilter;
 import org.apache.shiro.web.util.WebUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 
 
 public class MyFormAuthenticationFilter extends FormAuthenticationFilter {
-	@Resource
+	@Autowired
 	private UserService userService;
-	@Resource
+	@Autowired
 	private MenuService menuService;
 
 	private Logger logger = LoggerFactory.getLogger(MyFormAuthenticationFilter.class);
