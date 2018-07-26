@@ -19,6 +19,10 @@ shiro使用了自定义过滤器com.example.demo.jee.filter.MyFormAuthentication
 由于简单搭建，所以myFilter只是new了出来，将来完善，
 没有加入登录过期时间。
 
+#mycat
+加入mycat中间件，实现读写分离，由于mycat为零入侵式，所以无多余配置，也无需代码
+数据库主从复制是读写分离基础，另外参照资料配置
+
 #thymeleaf
 还在研究
 

@@ -3,6 +3,7 @@ package com.example.demo.manipulation.mapper.base;
 import com.example.demo.jee.base.GenericDao;
 import com.example.demo.manipulation.entity.base.User;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.transaction.annotation.Transactional;
 
 
 /**

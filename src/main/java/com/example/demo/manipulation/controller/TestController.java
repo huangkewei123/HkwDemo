@@ -189,6 +189,10 @@ public class TestController {
     public Object findUserAndMenu(){
         List list = new ArrayList();
         list.add(userService.findById("1"));
+        for (int i = 0 ; i < 10000 ;i++){
+            userService.findById("1");
+        }
+
         //list.add(menuService.selectById(1));
         return list;
     }
