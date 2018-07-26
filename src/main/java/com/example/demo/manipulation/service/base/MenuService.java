@@ -1,7 +1,7 @@
 package com.example.demo.manipulation.service.base;
 
+import com.example.demo.jee.base.GenericService;
 import com.example.demo.manipulation.entity.base.Menu;
-import com.github.pagehelper.Page;
 import com.github.pagehelper.PageInfo;
 
 import java.util.List;
@@ -9,7 +9,7 @@ import java.util.Map;
 
 
 
-public interface MenuService {
+public interface MenuService extends GenericService<Menu, Integer> {
 		
 	public void deleteMenuById(Integer menuId);
 

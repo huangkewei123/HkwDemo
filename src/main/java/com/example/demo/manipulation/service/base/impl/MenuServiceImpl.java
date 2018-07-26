@@ -31,6 +31,16 @@ public class MenuServiceImpl extends GenericServiceImpl<Menu, Integer> implement
         return menuMapper;
     }
 
+	@Override
+	public int delete(Integer id) {
+		return 0;
+	}
+
+	@Override
+	public Menu selectById(Integer id) {
+		return menuMapper.findById(id);
+	}
+
 	public void deleteMenuById(Integer menuId){
 		menuMapper.delete(menuId);
 		

@@ -246,10 +246,15 @@
 		where menuId=#{menuId} and roleId = #{roleId}
 	</delete>
 	
-	<select id="findMenuIdByRoleId" parameterType="int" resultType="map">
+	<select id="findMenuIdByRoleId" parameterType="map" resultType="java.lang.Integer">
 		select a.menuId from role_menu a
 		left join 
 		menu b on b.menuId = a.menuId 
 		 where a.roleId = #{roleId} and b.pid = #{pid}
+	</select>
+	
+	<select id="findById" parameterType="java.lang.Integer" resultType="menu" >
+		select * from menu where id = ${id}
+
 	</select>
 </mapper>
