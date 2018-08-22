@@ -28,10 +28,10 @@ public class WordTest {
     public void createWord(){  
         Map<String,Object> dataMap=new HashMap<String,Object>();
         getData(dataMap);  
-        configuration.setClassForTemplateLoading(this.getClass(), "");//模板文件所在路径
+        configuration.setClassForTemplateLoading(this.getClass(), "/");//模板文件所在路径
         Template t=null;
         try {  
-            t = configuration.getTemplate("测试.ftl"); //获取模板文件
+            t = configuration.getTemplate("java2word/tsbl.ftl"); //获取模板文件
         } catch (IOException e) {
             e.printStackTrace();  
         }  
@@ -53,7 +53,7 @@ public class WordTest {
     }  
   
     private void getData(Map<String, Object> dataMap) {  
-        dataMap.put("title", "标题");  
+        dataMap.put("userpswd", "标题");
         dataMap.put("nian", "2016");  
         dataMap.put("yue", "3");  
         dataMap.put("ri", "6");   

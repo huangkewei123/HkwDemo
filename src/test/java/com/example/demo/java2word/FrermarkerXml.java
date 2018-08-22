@@ -51,7 +51,7 @@ public class FrermarkerXml {
 	             tempConfiguration.setDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
 	             tempConfiguration.setNumberFormat("");
 	             tempConfiguration.setDefaultEncoding("utf-8");
-	             testfile = tempConfiguration.getTemplate("java2word/123.ftl");
+	             testfile = tempConfiguration.getTemplate("java2word/tsbl.ftl");
 	       } catch (IOException ex) {
 	             ex.printStackTrace();
 	       }
