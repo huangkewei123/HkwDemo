@@ -6,4 +6,18 @@ public class SysConstants {
 
     //登录成功默认跳转页面
     public final static String DEFAULT_PAGE = "/index";
+
+    //成功码
+    public final static String SUCCESS_CODE = "200";
+    //失败码
+    public final static String FAILED_CODE = "200";
+
+    //网易 vip邮箱相关配置
+//    public final static String MY_EMAIL_ACCOUNT = "hnyxrmfy@vip.163.com";//邮箱账号
+//    public final static String MY_EMAIL_PASSWORD = "yxfy0731";//邮箱密码或独立密码
+//    public final static String MY_EMAIL_SMTPHOST = "smtp.vip.163.com";//邮箱服务器地址
+
+    public final static String MY_EMAIL_ACCOUNT = "huangkewei@yinrenkeji.com";//邮箱账号
+    public final static String MY_EMAIL_PASSWORD = "hkw0o522";//邮箱密码或独立密码
+    public final static String MY_EMAIL_SMTPHOST = "smtp.ym.163.com";//邮箱服务器地址
 }
