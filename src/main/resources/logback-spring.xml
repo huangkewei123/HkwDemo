@@ -87,6 +87,7 @@
     <logger name="org.springframework.transaction" level="debug"/>
     <logger name="springframework.web" level="info"/>
     <logger name="org.thymeleaf" level="info"/>
+    <logger name="org.apache.pdfbox" level="info"/>
 
 
     <root level="INFO">

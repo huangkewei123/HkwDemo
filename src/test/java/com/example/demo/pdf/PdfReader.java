@@ -9,9 +9,9 @@ import org.apache.pdfbox.text.PDFTextStripperByArea;
 public class PdfReader {
 
     public static String getPdfContent(String filePath){
+        PDDocument document = null;
         try {
             //pdfbox提取pdf
-            PDDocument document = null;
             document = PDDocument.load(new File(filePath));
             document.getClass();
             if (!document.isEncrypted()) {
@@ -29,9 +29,9 @@ public class PdfReader {
     }
 
     public static void main(String[] args){
-        String str = getPdfContent("D:\\PDF\\Jquery.pdf");
-
-        boolean yes = str.contains("等双目操作符的前后加空格");
+        String str = getPdfContent("E:\\case\\2018-10-28\\(2018)湘0223民初17950号\\传票-存根-被告.pdf");
+        //System.out.println(str);
+        boolean yes = str.replaceAll(" ","").contains("(2018)湘0223民初17950号");
 
         System.out.println(yes);
         //System.out.println("Text:" + str);
