@@ -6,33 +6,22 @@ import java.io.*;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 public class PicDownLoad {
     /***
      * 下载图片
      *
      * @param listImgSrc
+     * @param path
      */
     public static void download(List<String> listImgSrc , String path) {
         try {
             for (String url : listImgSrc) {
-                String imageName = url.substring(url.lastIndexOf("/") + 1, url.length());
-                URL uri = new URL(url);
-                InputStream in = uri.openStream();
-                File file = new File(path + imageName);
-                System.out.println(path + imageName);
-                judeFileExists(file);
-                FileOutputStream fo = new FileOutputStream(file);
-                byte[] buf = new byte[1024];
-                int length = 0;
-                System.out.println("开始下载:" + url);
-                while ((length = in.read(buf, 0, buf.length)) != -1) {
-                    fo.write(buf, 0, length);
-                }
-                in.close();
-                fo.close();
-                System.out.println(imageName + "下载完成");
+                downloadAction(url , path);
             }
         } catch (Exception e) {
             System.out.println("下载失败");
@@ -60,16 +49,33 @@ public class PicDownLoad {
              */
             List<ArrayList<String>> list = new ArrayList<ArrayList<String>>();
 
+            ExecutorService service = Executors.newFixedThreadPool(threedCount);
+            List<Future<Boolean>> tasks = new ArrayList<>();
             for (final String url : listImgSrc) {
-                new PicThread("图片下载线程",url , path).start();
+                tasks.add(
+                    service.submit(new Callable<Boolean>() {
+                        @Override
+                        public Boolean call() throws Exception {
+                            downloadAction(url , path);
+                            return true;
+                        }
+                    })
+                );
             }
+            service.shutdown();
         } catch (Exception e) {
             System.out.println("下载失败");
             e.getStackTrace();
         }
     }
 
-    private static void threedRun(String url , String path) throws IOException {
+    /**
+     * 正式启动下载，下载某一个地址下的数据
+     * @param url   被下载的地址
+     * @param path  下载的文件存储的本地地址
+     * @throws IOException
+     */
+    private static void downloadAction(String url , String path) throws IOException {
         String imageName = url.substring(url.lastIndexOf("/") + 1, url.length());
         URL uri = new URL(url);
         InputStream in = uri.openStream();

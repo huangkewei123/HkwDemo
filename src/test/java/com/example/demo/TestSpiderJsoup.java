@@ -38,7 +38,7 @@ public class TestSpiderJsoup {
         List<Chapter> list = util.getsChapter("http://zapet.cn/book/500");
         for (Chapter chapter : list){
             List<String> detailsStrlist = util.getHtmlDetailsStr(chapter.getUrl());
-            PicDownLoad.downloadByThreed(detailsStrlist , "F:\\spiderDownload\\全职看护\\" ,4);
+            PicDownLoad.downloadByThreed(detailsStrlist , "F:\\spiderDownload\\全职看护\\" ,100);
         }
     }
 }
