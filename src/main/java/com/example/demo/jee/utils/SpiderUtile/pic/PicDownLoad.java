@@ -1,15 +1,13 @@
 package com.example.demo.jee.utils.SpiderUtile.pic;
 
 import com.example.demo.jee.utils.SpiderUtile.PicThread;
+import com.example.demo.jee.utils.ThreadCoinfguration.CallableDownload;
 
 import java.io.*;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
+import java.util.concurrent.*;
 
 public class PicDownLoad {
     /***
@@ -50,19 +48,20 @@ public class PicDownLoad {
             List<ArrayList<String>> list = new ArrayList<ArrayList<String>>();
 
             ExecutorService service = Executors.newFixedThreadPool(threedCount);
-            List<Future<Boolean>> tasks = new ArrayList<>();
+            List<Future<String>> tasks = new ArrayList<>();
             for (final String url : listImgSrc) {
                 tasks.add(
-                    service.submit(new Callable<Boolean>() {
-                        @Override
-                        public Boolean call() throws Exception {
-                            downloadAction(url , path);
-                            return true;
-                        }
-                    })
+                    service.submit(new CallableDownload( url , path))
                 );
             }
             service.shutdown();
+            for (Future<String> future : tasks) {
+                try {
+                    System.out.println(future.get() + ",线程完成！");
+                } catch (InterruptedException | ExecutionException e) {
+                    e.printStackTrace();
+                }
+            }
         } catch (Exception e) {
             System.out.println("下载失败");
             e.getStackTrace();
@@ -75,7 +74,7 @@ public class PicDownLoad {
      * @param path  下载的文件存储的本地地址
      * @throws IOException
      */
-    private static void downloadAction(String url , String path) throws IOException {
+    public static void downloadAction(String url, String path) throws IOException {
         String imageName = url.substring(url.lastIndexOf("/") + 1, url.length());
         URL uri = new URL(url);
         InputStream in = uri.openStream();

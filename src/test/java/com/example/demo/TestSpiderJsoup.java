@@ -41,4 +41,14 @@ public class TestSpiderJsoup {
             PicDownLoad.downloadByThreed(detailsStrlist , "F:\\spiderDownload\\全职看护\\" ,100);
         }
     }
+
+    @Test
+    public void testDownLoadDetail() throws Exception{
+        SpiderJsoupUtil util = new SpiderJsoupUtil();
+        List<Chapter> list = util.getsChapter("http://zapet.cn/book/500");
+        for (Chapter chapter : list){
+            List<String> detailsStrlist = util.getHtmlDetailsStr(chapter.getUrl());
+            PicDownLoad.downloadByThreed(detailsStrlist , "F:\\spiderDownload\\全职看护\\" ,100);
+        }
+    }
 }

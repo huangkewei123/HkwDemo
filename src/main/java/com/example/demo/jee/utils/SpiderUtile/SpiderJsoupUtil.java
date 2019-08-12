@@ -12,7 +12,9 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class SpiderJsoupUtil {
     /**
@@ -54,6 +56,20 @@ public class SpiderJsoupUtil {
         } catch (Exception e) {
             throw e;
         }
+    }
+
+    /**
+     * 计算所需线程数量
+     * @param list
+     * @return
+     */
+    public Map threadRec(List<Chapter> list){
+        //获取总共章节数量，然后根据计算方法放入多个集合中返回
+        int threadCount = list.size();
+        Map<String,List<Chapter>> map = new HashMap<String , List<Chapter>>();
+
+
+        return map;
     }
 
     /**

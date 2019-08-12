@@ -1,6 +1,8 @@
 package com.example.demo.jee.utils.SpiderUtile.bean;
 
-public class Chapter {
+import java.io.Serializable;
+
+public class Chapter implements Serializable {
     private String title;
     private String url;
 
