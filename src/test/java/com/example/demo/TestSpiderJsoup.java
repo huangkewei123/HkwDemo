@@ -4,6 +4,7 @@ package com.example.demo;
 import com.example.demo.jee.utils.SpiderUtile.SpiderJsoupUtil;
 import com.example.demo.jee.utils.SpiderUtile.bean.Chapter;
 import com.example.demo.jee.utils.SpiderUtile.pic.PicDownLoad;
+import com.example.demo.jee.utils.XmlReader;
 import org.junit.Test;
 
 import java.io.File;
@@ -50,5 +51,10 @@ public class TestSpiderJsoup {
             List<String> detailsStrlist = util.getHtmlDetailsStr(chapter.getUrl());
             PicDownLoad.downloadByThreed(detailsStrlist , "F:\\spiderDownload\\全职看护\\" ,100);
         }
+    }
+
+    @Test
+    public void testSAXreader(){
+        XmlReader.loadConfig();
     }
 }
