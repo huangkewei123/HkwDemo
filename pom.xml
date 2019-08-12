@@ -240,12 +240,7 @@
         </dependency>
 
         <!-- xpath支持 -->
-        <!--<dependency>
-            <groupId>org.jsoup</groupId>
-            <artifactId>jsoup</artifactId>
-            <version>1.11.3</version>
-        </dependency>
-
+        <!--
         &lt;!&ndash; https://mvnrepository.com/artifact/javax.xml/jaxrpc-api &ndash;&gt;
         <dependency>
             <groupId>javax.xml</groupId>
@@ -297,6 +292,12 @@
             <groupId>org.jsoup</groupId>
             <artifactId>jsoup</artifactId>
             <version>1.12.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.thoughtworks.xstream</groupId>
+            <artifactId>xstream</artifactId>
+            <version>1.4.10</version>
         </dependency>
     </dependencies>
 
