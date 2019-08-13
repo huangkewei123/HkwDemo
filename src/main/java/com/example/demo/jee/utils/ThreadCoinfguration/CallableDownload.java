@@ -2,6 +2,7 @@ package com.example.demo.jee.utils.ThreadCoinfguration;
 
 import com.example.demo.jee.utils.SpiderUtile.pic.PicDownLoad;
 
+import java.util.Map;
 import java.util.concurrent.Callable;
 
 public class CallableDownload implements Callable<String> {

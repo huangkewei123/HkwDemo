@@ -1,5 +1,8 @@
 package com.example.demo.jee.constants;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 public class SysConstants {
     //当前用户session中的key
     public final static String CURRENT_USER = "currentUser";
@@ -20,4 +23,6 @@ public class SysConstants {
     public final static String MY_EMAIL_ACCOUNT = "huangkewei@yinrenkeji.com";//邮箱账号
     public final static String MY_EMAIL_PASSWORD = "hkw0o522";//邮箱密码或独立密码
     public final static String MY_EMAIL_SMTPHOST = "smtp.ym.163.com";//邮箱服务器地址
+
+    public final static ExecutorService THREAD_POOL = Executors.newFixedThreadPool(100);
 }

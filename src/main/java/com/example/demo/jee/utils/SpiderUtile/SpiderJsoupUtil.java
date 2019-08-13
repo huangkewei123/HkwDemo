@@ -40,16 +40,16 @@ public class SpiderJsoupUtil {
      * @return
      * @throws Exception
      */
-    public List<Chapter> getsChapter(String url) throws Exception{
+    public List<Chapter> getsChapter(String url , Map<String , String > schamel) throws Exception{
         try {
             String result = crawl(url);
             Document doc = Jsoup.parse(result);
-            Elements elements = doc.select("#detail-list-select li a");
+            Elements elements = doc.select(schamel.get("detail-attr-url-site"));
             List<Chapter> list = new ArrayList<>();
             for (Element a : elements){
                 Chapter chapter = new Chapter();
                 chapter.setTitle(a.text());
-                chapter.setUrl("http://zapet.cn" + a.attr("href"));
+                chapter.setUrl(schamel.get("url") + a.attr(schamel.get("img-href-site")));
                 list.add(chapter);
             }
             return list;
@@ -78,16 +78,16 @@ public class SpiderJsoupUtil {
      * @return
      * @throws Exception
      */
-    public List<Chapter> getHtmlDetailsChapter(String url) throws Exception{
+    public List<Chapter> getHtmlDetailsChapter(String url , Map<String , String > schamel) throws Exception{
         try {
             String result = crawl(url);
             Document doc = Jsoup.parse(result);
-            Elements elements = doc.select("#content div div div img");
+            Elements elements = doc.select(schamel.get("img-url-selector-site"));
             List<Chapter> list = new ArrayList<Chapter>();
             for (Element a : elements){
                 Chapter chapter = new Chapter();
                 chapter.setTitle(a.text());
-                chapter.setUrl(a.attr("data-original"));
+                chapter.setUrl(a.attr(schamel.get("img-data-site")));
                 list.add(chapter);
             }
             return list;
@@ -102,14 +102,14 @@ public class SpiderJsoupUtil {
      * @return
      * @throws Exception
      */
-    public List<String> getHtmlDetailsStr(String url) throws Exception{
+    public List<String> getHtmlDetailsStr(String url , Map<String , String > schamel) throws Exception{
         try {
             String result = crawl(url);
             Document doc = Jsoup.parse(result);
-            Elements elements = doc.select("#content div div div img");
+            Elements elements = doc.select(schamel.get("img-url-selector-site"));
             List<String> list = new ArrayList<String>();
             for (Element a : elements){
-                list.add(a.attr("data-original"));
+                list.add(a.attr(schamel.get("img-data-site")));
             }
             return list;
         } catch (Exception e) {

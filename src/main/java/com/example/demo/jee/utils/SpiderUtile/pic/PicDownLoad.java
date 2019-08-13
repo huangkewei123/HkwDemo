@@ -1,13 +1,19 @@
 package com.example.demo.jee.utils.SpiderUtile.pic;
 
-import com.example.demo.jee.utils.SpiderUtile.PicThread;
+import com.example.demo.jee.constants.SysConstants;
 import com.example.demo.jee.utils.ThreadCoinfguration.CallableDownload;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.*;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 public class PicDownLoad {
     /***
@@ -32,29 +38,26 @@ public class PicDownLoad {
      *
      * @param listImgSrc 地址集合
      * @param path 存储地址
-     * @param threedCount 线程数量，默认为2
      */
-    public static void downloadByThreed(List<String> listImgSrc , String path , Integer threedCount) {
+    public static void downloadByThreed(List<String> listImgSrc , String path ) {
         try {
-            /*
-            如果线程数量为空或者0，则使用默认数
-             */
-            if(threedCount == null || threedCount == 0){
-                threedCount = 2;
-            }
             /*
             遍历地址集合，将地址分配到多个map中，启动线程爬取map
              */
             List<ArrayList<String>> list = new ArrayList<ArrayList<String>>();
 
-            ExecutorService service = Executors.newFixedThreadPool(threedCount);
+            //查看是否有文件夹
+            judeDirExists(new File(path));
+
+            ExecutorService service = SysConstants.THREAD_POOL;
+//            ExecutorService service = Executors.newFixedThreadPool(10);
             List<Future<String>> tasks = new ArrayList<>();
             for (final String url : listImgSrc) {
                 tasks.add(
                     service.submit(new CallableDownload( url , path))
                 );
             }
-            service.shutdown();
+
             for (Future<String> future : tasks) {
                 try {
                     System.out.println(future.get() + ",线程完成！");
@@ -62,6 +65,7 @@ public class PicDownLoad {
                     e.printStackTrace();
                 }
             }
+//            service.shutdown();
         } catch (Exception e) {
             System.out.println("下载失败");
             e.getStackTrace();
@@ -78,9 +82,15 @@ public class PicDownLoad {
         String imageName = url.substring(url.lastIndexOf("/") + 1, url.length());
         URL uri = new URL(url);
         InputStream in = uri.openStream();
+
         File file = new File(path + imageName);
         System.out.println(path + imageName);
         judeFileExists(file);
+        //文件大小估值
+        int fileAvailable = in.available();
+        //如果文件大小估值与本地文件大小一致，则跳过此文件的下载
+
+
         FileOutputStream fo = new FileOutputStream(file);
         byte[] buf = new byte[1024];
         int length = 0;
