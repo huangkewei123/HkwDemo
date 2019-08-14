@@ -1,6 +1,10 @@
 package com.example.demo.jee.utils.SpiderUtile;
 
+import com.example.demo.jee.constants.SysConstants;
+import com.example.demo.jee.utils.LoggerUtil;
 import com.example.demo.jee.utils.SpiderUtile.bean.Chapter;
+import com.example.demo.jee.utils.SpiderUtile.pic.PicDownLoad;
+import com.example.demo.manipulation.controller.TestController;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
@@ -10,13 +14,18 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class SpiderJsoupUtil {
+
+    Logger logger = LoggerFactory.getLogger(SpiderJsoupUtil.class);
     /**
      * 连接url获取返回的页面
      * @param url
@@ -35,15 +44,31 @@ public class SpiderJsoupUtil {
     }
 
     /**
+     * 根据书名创建对应的文件夹
+     * @param doc
+     * @param schamel
+     */
+    public String getTitlePath(Document doc ,Map<String , String > schamel){
+        try{
+            Elements elements = doc.select(schamel.get("title-site"));
+            //解析element后的书本的title作为文件夹
+            return SysConstants.CARTOON_PATH + elements.get(0).text() + "\\";
+        } catch (Exception e){
+            logger.error(e.getMessage());
+            throw new RuntimeException("创建文件夹目录失败");
+        }
+
+    }
+
+    /**
      * 获取表单的dom元素，解析出url和标题放入list
-     * @param url
+     * @param doc
+     * @param schamel
      * @return
      * @throws Exception
      */
-    public List<Chapter> getsChapter(String url , Map<String , String > schamel) throws Exception{
+    public List<Chapter> getsChapter(Document doc , Map<String , String > schamel) throws Exception{
         try {
-            String result = crawl(url);
-            Document doc = Jsoup.parse(result);
             Elements elements = doc.select(schamel.get("detail-attr-url-site"));
             List<Chapter> list = new ArrayList<>();
             for (Element a : elements){
@@ -56,20 +81,6 @@ public class SpiderJsoupUtil {
         } catch (Exception e) {
             throw e;
         }
-    }
-
-    /**
-     * 计算所需线程数量
-     * @param list
-     * @return
-     */
-    public Map threadRec(List<Chapter> list){
-        //获取总共章节数量，然后根据计算方法放入多个集合中返回
-        int threadCount = list.size();
-        Map<String,List<Chapter>> map = new HashMap<String , List<Chapter>>();
-
-
-        return map;
     }
 
     /**

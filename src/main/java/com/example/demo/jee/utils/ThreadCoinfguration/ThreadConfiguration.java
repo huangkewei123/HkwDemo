@@ -1,36 +1,22 @@
 package com.example.demo.jee.utils.ThreadCoinfguration;
 
+import com.example.demo.jee.constants.Configuration;
+
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 public class ThreadConfiguration implements Serializable {
-    /*
-    每个线程下载的最大章节数
+
+    /**
+     * 线程池最大化数量
      */
-    public static final int DEFAUT_SIZE = 100;
+    public static final Integer THREAD_POOL_COUNT = Configuration.getInstance().getIntValue("thread_pool_count");
 
-    public  ThreadConfiguration(){
-        this.size = DEFAUT_SIZE;
-    }
-    /*
+    public final static ExecutorService THREAD_POOL = Executors.newFixedThreadPool(THREAD_POOL_COUNT);
 
-     */
-    private String path;
-
-    private int size;
-
-    public String getPath() {
-        return path;
-    }
-
-    public void setPath(String path) {
-        this.path = path;
-    }
-
-    public int getSize() {
-        return size;
-    }
-
-    public void setSize(int size) {
-        this.size = size;
-    }
+    public static List<Future<String>> TASKS = new ArrayList<Future<String>>();
 }

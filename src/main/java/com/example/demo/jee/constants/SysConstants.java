@@ -1,7 +1,12 @@
 package com.example.demo.jee.constants;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 
 public class SysConstants {
     //当前用户session中的key
@@ -24,5 +29,6 @@ public class SysConstants {
     public final static String MY_EMAIL_PASSWORD = "hkw0o522";//邮箱密码或独立密码
     public final static String MY_EMAIL_SMTPHOST = "smtp.ym.163.com";//邮箱服务器地址
 
-    public final static ExecutorService THREAD_POOL = Executors.newFixedThreadPool(100);
+    public final static String CARTOON_PATH = Configuration.getInstance().getValue("cartoon_path");
+
 }

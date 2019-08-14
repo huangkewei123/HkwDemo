@@ -1,22 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-    <!-->本地存储地址</-->
-    <location-storage-path>/Users/huangkewei/java-download</location-storage-path>
-
     <site>
-        <!-->下载数据的官方地址</-->
+        <!--下载数据的官方地址-->
         <url>http://zapet.cn</url>
-        <!-->官方名称</-->
+        <!--官方名称-->
         <name>新新漫画</name>
-        <!-->标题选择器</-->
-        <title-site></title-site>
-        <!-->详情url定位选择器，选取详情中的每一条</-->
+        <!--标题选择器-->
+        <title-site>div[class='banner_detail_form'] div[class='info'] h1</title-site>
+        <!--详情url定位选择器，选取详情中的每一条-->
         <detail-attr-url-site>#detail-list-select li a</detail-attr-url-site>
-        <!-->选取a标签</-->
+        <!--选取a标签-->
         <img-href-site>href</img-href-site>
-        <!-->详情图片选择器，选择出详情页中的多个图片条目</-->
+        <!--详情图片选择器，选择出详情页中的多个图片条目-->
         <img-url-selector-site>#content div div div img</img-url-selector-site>
-        <!-->真正的图片url</-->
+        <!--真正的图片url-->
         <img-data-site>data-original</img-data-site>
     </site>
 </configuration>

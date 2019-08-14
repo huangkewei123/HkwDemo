@@ -2,6 +2,8 @@ package com.example.demo.jee.utils.SpiderUtile.pic;
 
 import com.example.demo.jee.constants.SysConstants;
 import com.example.demo.jee.utils.ThreadCoinfguration.CallableDownload;
+import com.example.demo.jee.utils.ThreadCoinfguration.ThreadConfiguration;
+import org.apache.commons.io.FileUtils;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -41,31 +43,23 @@ public class PicDownLoad {
      */
     public static void downloadByThreed(List<String> listImgSrc , String path ) {
         try {
-            /*
-            遍历地址集合，将地址分配到多个map中，启动线程爬取map
-             */
-            List<ArrayList<String>> list = new ArrayList<ArrayList<String>>();
 
             //查看是否有文件夹
             judeDirExists(new File(path));
 
-            ExecutorService service = SysConstants.THREAD_POOL;
-//            ExecutorService service = Executors.newFixedThreadPool(10);
-            List<Future<String>> tasks = new ArrayList<>();
             for (final String url : listImgSrc) {
-                tasks.add(
-                    service.submit(new CallableDownload( url , path))
+                ThreadConfiguration.TASKS.add(
+                        ThreadConfiguration.THREAD_POOL.submit(new CallableDownload( url , path))
                 );
             }
 
-            for (Future<String> future : tasks) {
+            for (Future<String> future : ThreadConfiguration.TASKS) {
                 try {
                     System.out.println(future.get() + ",线程完成！");
                 } catch (InterruptedException | ExecutionException e) {
                     e.printStackTrace();
                 }
             }
-//            service.shutdown();
         } catch (Exception e) {
             System.out.println("下载失败");
             e.getStackTrace();
@@ -113,7 +107,6 @@ public class PicDownLoad {
             try {
                 file.createNewFile();
             } catch (IOException e) {
-                // TODO Auto-generated catch block
                 e.printStackTrace();
             }
         }
@@ -131,7 +124,11 @@ public class PicDownLoad {
             }
         } else {
             System.out.println("dir not exists, create it ...");
-            file.mkdir();
+            try {
+                FileUtils.forceMkdir(file);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
 
     }
