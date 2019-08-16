@@ -20,11 +20,11 @@ import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 import javax.mail.internet.MimeUtility;
 
+import com.alibaba.fastjson.JSONObject;
 import com.example.demo.jee.constants.SysConstants;
 import com.example.demo.jee.utils.SpiderUtile.SpiderXpathUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import net.sf.json.JSONObject;
 
 /**
  * 简单邮件（不带附件的邮件）发送器
