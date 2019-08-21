@@ -35,3 +35,7 @@ shiro使用了自定义过滤器com.example.demo.jee.filter.MyFormAuthentication
 #过滤器、拦截器
 实现了拦截器与过滤器配置，但是没有写逻辑
 
+#加入爬虫，爬取漫画网站
+
+#加入lombok
+plugin中添加lombok插件

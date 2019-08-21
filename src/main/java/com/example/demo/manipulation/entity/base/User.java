@@ -1,5 +1,7 @@
 package com.example.demo.manipulation.entity.base;
 
+import lombok.Data;
+
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 import java.sql.Timestamp;
@@ -10,6 +12,7 @@ import java.sql.Timestamp;
  * @author StarZou
  * @since 2014年7月5日 下午12:07:20
  **/
+@Data
 public class User {
     private String id;
 
@@ -31,48 +34,6 @@ public class User {
         this.username = username;
         this.password = password;
     }
-
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
-
-	public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username == null ? null : username.trim();
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password == null ? null : password.trim();
-    }
-
-
-    public Integer getState() {
-		return state;
-	}
-
-	public void setState(Integer state) {
-		this.state = state;
-	}
-
-
-    public Timestamp getCreateTime() {
-		return createTime;
-	}
-
-	public void setCreateTime(Timestamp createTime) {
-		this.createTime = createTime;
-	}
 
 	@Override
     public String toString() {
