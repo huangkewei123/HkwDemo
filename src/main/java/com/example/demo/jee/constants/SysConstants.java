@@ -29,6 +29,9 @@ public class SysConstants {
     public final static String MY_EMAIL_PASSWORD = "hkw0o522";//邮箱密码或独立密码
     public final static String MY_EMAIL_SMTPHOST = "smtp.ym.163.com";//邮箱服务器地址
 
+    //漫画存放地址
     public final static String CARTOON_PATH = Configuration.getInstance().getValue("cartoon_path");
+    //ftp存储地址
+    public static final String SAVEPATHPDF = Configuration.getInstance().getValue("savePathPDF");
 
 }

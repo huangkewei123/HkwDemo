@@ -1,0 +1,290 @@
+[2019-08-16 10:42:50] [DEBUG] [com.example.demo.DemoApplication:53]-- Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
+[2019-08-16 10:42:52] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:437]-- Identified candidate component class: file [F:\soft\coder\HkwDemo\target\classes\com\example\demo\manipulation\mapper\base\MenuMapper.class]
+[2019-08-16 10:42:52] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:437]-- Identified candidate component class: file [F:\soft\coder\HkwDemo\target\classes\com\example\demo\manipulation\mapper\base\PermissionMapper.class]
+[2019-08-16 10:42:52] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:437]-- Identified candidate component class: file [F:\soft\coder\HkwDemo\target\classes\com\example\demo\manipulation\mapper\base\PersonMapper.class]
+[2019-08-16 10:42:52] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:437]-- Identified candidate component class: file [F:\soft\coder\HkwDemo\target\classes\com\example\demo\manipulation\mapper\base\RoleMapper.class]
+[2019-08-16 10:42:52] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:437]-- Identified candidate component class: file [F:\soft\coder\HkwDemo\target\classes\com\example\demo\manipulation\mapper\base\RoleMenuMapper.class]
+[2019-08-16 10:42:52] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:437]-- Identified candidate component class: file [F:\soft\coder\HkwDemo\target\classes\com\example\demo\manipulation\mapper\base\UserMapper.class]
+[2019-08-16 10:42:52] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:180]-- Creating MapperFactoryBean with name 'menuMapper' and 'com.example.demo.manipulation.mapper.base.MenuMapper' mapperInterface
+[2019-08-16 10:42:52] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:216]-- Enabling autowire by type for MapperFactoryBean with name 'menuMapper'.
+[2019-08-16 10:42:52] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:180]-- Creating MapperFactoryBean with name 'permissionMapper' and 'com.example.demo.manipulation.mapper.base.PermissionMapper' mapperInterface
+[2019-08-16 10:42:52] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:216]-- Enabling autowire by type for MapperFactoryBean with name 'permissionMapper'.
+[2019-08-16 10:42:52] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:180]-- Creating MapperFactoryBean with name 'personMapper' and 'com.example.demo.manipulation.mapper.base.PersonMapper' mapperInterface
+[2019-08-16 10:42:52] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:216]-- Enabling autowire by type for MapperFactoryBean with name 'personMapper'.
+[2019-08-16 10:42:52] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:180]-- Creating MapperFactoryBean with name 'roleMapper' and 'com.example.demo.manipulation.mapper.base.RoleMapper' mapperInterface
+[2019-08-16 10:42:52] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:216]-- Enabling autowire by type for MapperFactoryBean with name 'roleMapper'.
+[2019-08-16 10:42:52] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:180]-- Creating MapperFactoryBean with name 'roleMenuMapper' and 'com.example.demo.manipulation.mapper.base.RoleMenuMapper' mapperInterface
+[2019-08-16 10:42:52] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:216]-- Enabling autowire by type for MapperFactoryBean with name 'roleMenuMapper'.
+[2019-08-16 10:42:52] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:180]-- Creating MapperFactoryBean with name 'userMapper' and 'com.example.demo.manipulation.mapper.base.UserMapper' mapperInterface
+[2019-08-16 10:42:52] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:216]-- Enabling autowire by type for MapperFactoryBean with name 'userMapper'.
+[2019-08-16 10:42:54] [DEBUG] [org.mybatis.spring.SqlSessionFactoryBean:437]-- Scanned package: 'com.example.demo.manipulation.entity' for aliases
+[2019-08-16 10:42:55] [DEBUG] [org.mybatis.spring.SqlSessionFactoryBean:529]-- Parsed mapper file: 'file [F:\soft\coder\HkwDemo\target\classes\mapper\base\MenuMapper.xml]'
+[2019-08-16 10:42:55] [DEBUG] [org.mybatis.spring.SqlSessionFactoryBean:529]-- Parsed mapper file: 'file [F:\soft\coder\HkwDemo\target\classes\mapper\base\PermissionMapper.xml]'
+[2019-08-16 10:42:55] [DEBUG] [org.mybatis.spring.SqlSessionFactoryBean:529]-- Parsed mapper file: 'file [F:\soft\coder\HkwDemo\target\classes\mapper\base\PersonMapper.xml]'
+[2019-08-16 10:42:55] [DEBUG] [org.mybatis.spring.SqlSessionFactoryBean:529]-- Parsed mapper file: 'file [F:\soft\coder\HkwDemo\target\classes\mapper\base\RoleMapper.xml]'
+[2019-08-16 10:42:55] [DEBUG] [org.mybatis.spring.SqlSessionFactoryBean:529]-- Parsed mapper file: 'file [F:\soft\coder\HkwDemo\target\classes\mapper\base\RoleMenuMapper.xml]'
+[2019-08-16 10:42:55] [DEBUG] [org.mybatis.spring.SqlSessionFactoryBean:529]-- Parsed mapper file: 'file [F:\soft\coder\HkwDemo\target\classes\mapper\base\UserMapper.xml]'
+[2019-08-16 10:43:40] [DEBUG] [org.mybatis.spring.SqlSessionUtils:97]-- Creating a new SqlSession
+[2019-08-16 10:43:40] [DEBUG] [org.mybatis.spring.SqlSessionUtils:148]-- SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@65e7fa3b] was not registered for synchronization because synchronization is not active
+[2019-08-16 10:43:40] [DEBUG] [org.mybatis.spring.transaction.SpringManagedTransaction:87]-- JDBC Connection [HikariProxyConnection@1558927669 wrapping com.mysql.cj.jdbc.ConnectionImpl@45800323] will not be managed by Spring
+[2019-08-16 10:43:40] [DEBUG] [com.example.demo.manipulation.mapper.base.RoleMapper.selectAllRoles_COUNT:159]-- ==>  Preparing: SELECT count(0) FROM role r WHERE 1 = 1 
+[2019-08-16 10:43:40] [DEBUG] [com.example.demo.manipulation.mapper.base.RoleMapper.selectAllRoles_COUNT:159]-- ==> Parameters: 
+[2019-08-16 10:43:41] [DEBUG] [com.example.demo.manipulation.mapper.base.RoleMapper.selectAllRoles_COUNT:159]-- <==      Total: 1
+[2019-08-16 10:43:41] [DEBUG] [com.example.demo.manipulation.mapper.base.RoleMapper.selectAllRoles:159]-- ==>  Preparing: SELECT r.* FROM role r WHERE 1 = 1 LIMIT ? 
+[2019-08-16 10:43:41] [DEBUG] [com.example.demo.manipulation.mapper.base.RoleMapper.selectAllRoles:159]-- ==> Parameters: 2(Integer)
+[2019-08-16 10:43:41] [DEBUG] [com.example.demo.manipulation.mapper.base.RoleMapper.selectAllRoles:159]-- <==      Total: 2
+[2019-08-16 10:43:41] [DEBUG] [org.mybatis.spring.SqlSessionUtils:191]-- Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@65e7fa3b]
+[2019-08-16 10:44:02] [DEBUG] [org.mybatis.spring.SqlSessionUtils:97]-- Creating a new SqlSession
+[2019-08-16 10:44:02] [DEBUG] [org.mybatis.spring.SqlSessionUtils:148]-- SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@39327994] was not registered for synchronization because synchronization is not active
+[2019-08-16 10:44:02] [DEBUG] [org.mybatis.spring.transaction.SpringManagedTransaction:87]-- JDBC Connection [HikariProxyConnection@2063961171 wrapping com.mysql.cj.jdbc.ConnectionImpl@45800323] will not be managed by Spring
+[2019-08-16 10:44:02] [DEBUG] [com.example.demo.manipulation.mapper.base.MenuMapper.findPage_COUNT:159]-- ==>  Preparing: SELECT count(0) FROM menu WHERE 1 = 1 
+[2019-08-16 10:44:02] [DEBUG] [com.example.demo.manipulation.mapper.base.MenuMapper.findPage_COUNT:159]-- ==> Parameters: 
+[2019-08-16 10:44:02] [DEBUG] [com.example.demo.manipulation.mapper.base.MenuMapper.findPage_COUNT:159]-- <==      Total: 1
+[2019-08-16 10:44:02] [DEBUG] [com.example.demo.manipulation.mapper.base.MenuMapper.findPage:159]-- ==>  Preparing: select * from menu WHERE 1 = 1 LIMIT ? 
+[2019-08-16 10:44:02] [DEBUG] [com.example.demo.manipulation.mapper.base.MenuMapper.findPage:159]-- ==> Parameters: 2(Integer)
+[2019-08-16 10:44:02] [DEBUG] [com.example.demo.manipulation.mapper.base.MenuMapper.findPage:159]-- <==      Total: 2
+[2019-08-16 10:44:02] [DEBUG] [org.mybatis.spring.SqlSessionUtils:191]-- Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@39327994]
+[2019-08-16 10:44:02] [DEBUG] [org.mybatis.spring.SqlSessionUtils:97]-- Creating a new SqlSession
+[2019-08-16 10:44:02] [DEBUG] [org.mybatis.spring.SqlSessionUtils:148]-- SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1a2bf1aa] was not registered for synchronization because synchronization is not active
+[2019-08-16 10:44:02] [DEBUG] [org.mybatis.spring.transaction.SpringManagedTransaction:87]-- JDBC Connection [HikariProxyConnection@1197317731 wrapping com.mysql.cj.jdbc.ConnectionImpl@45800323] will not be managed by Spring
+[2019-08-16 10:44:02] [DEBUG] [com.example.demo.manipulation.mapper.base.RoleMapper.selectAllRoles_COUNT:159]-- ==>  Preparing: SELECT count(0) FROM role r WHERE 1 = 1 
+[2019-08-16 10:44:02] [DEBUG] [com.example.demo.manipulation.mapper.base.RoleMapper.selectAllRoles_COUNT:159]-- ==> Parameters: 
+[2019-08-16 10:44:02] [DEBUG] [com.example.demo.manipulation.mapper.base.RoleMapper.selectAllRoles_COUNT:159]-- <==      Total: 1
+[2019-08-16 10:44:02] [DEBUG] [com.example.demo.manipulation.mapper.base.RoleMapper.selectAllRoles:159]-- ==>  Preparing: SELECT r.* FROM role r WHERE 1 = 1 LIMIT ? 
+[2019-08-16 10:44:02] [DEBUG] [com.example.demo.manipulation.mapper.base.RoleMapper.selectAllRoles:159]-- ==> Parameters: 2(Integer)
+[2019-08-16 10:44:02] [DEBUG] [com.example.demo.manipulation.mapper.base.RoleMapper.selectAllRoles:159]-- <==      Total: 2
+[2019-08-16 10:44:02] [DEBUG] [org.mybatis.spring.SqlSessionUtils:191]-- Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1a2bf1aa]
+[2019-08-16 10:44:56] [DEBUG] [org.mybatis.spring.SqlSessionUtils:97]-- Creating a new SqlSession
+[2019-08-16 10:44:56] [DEBUG] [org.mybatis.spring.SqlSessionUtils:148]-- SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7c596132] was not registered for synchronization because synchronization is not active
+[2019-08-16 10:44:56] [DEBUG] [org.mybatis.spring.transaction.SpringManagedTransaction:87]-- JDBC Connection [HikariProxyConnection@1556560539 wrapping com.mysql.cj.jdbc.ConnectionImpl@45800323] will not be managed by Spring
+[2019-08-16 10:44:56] [DEBUG] [com.example.demo.manipulation.mapper.base.PersonMapper.selectByPrimaryKey:159]-- ==>  Preparing: select id, name, age, address from person where id = ? 
+[2019-08-16 10:44:56] [DEBUG] [com.example.demo.manipulation.mapper.base.PersonMapper.selectByPrimaryKey:159]-- ==> Parameters: null
+[2019-08-16 10:44:56] [DEBUG] [com.example.demo.manipulation.mapper.base.PersonMapper.selectByPrimaryKey:159]-- <==      Total: 0
+[2019-08-16 10:44:56] [DEBUG] [org.mybatis.spring.SqlSessionUtils:191]-- Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@7c596132]
+[2019-08-16 10:45:25] [DEBUG] [org.mybatis.spring.SqlSessionUtils:97]-- Creating a new SqlSession
+[2019-08-16 10:45:25] [DEBUG] [org.mybatis.spring.SqlSessionUtils:148]-- SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4c98c605] was not registered for synchronization because synchronization is not active
+[2019-08-16 10:45:25] [DEBUG] [org.mybatis.spring.transaction.SpringManagedTransaction:87]-- JDBC Connection [HikariProxyConnection@161108466 wrapping com.mysql.cj.jdbc.ConnectionImpl@45800323] will not be managed by Spring
+[2019-08-16 10:45:25] [DEBUG] [com.example.demo.manipulation.mapper.base.PersonMapper.selectByPrimaryKey:159]-- ==>  Preparing: select id, name, age, address from person where id = ? 
+[2019-08-16 10:45:25] [DEBUG] [com.example.demo.manipulation.mapper.base.PersonMapper.selectByPrimaryKey:159]-- ==> Parameters: 1(Integer)
+[2019-08-16 10:45:25] [DEBUG] [com.example.demo.manipulation.mapper.base.PersonMapper.selectByPrimaryKey:159]-- <==      Total: 1
+[2019-08-16 10:45:25] [DEBUG] [org.mybatis.spring.SqlSessionUtils:191]-- Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@4c98c605]
+[2019-08-16 10:46:09] [DEBUG] [org.mybatis.spring.SqlSessionUtils:97]-- Creating a new SqlSession
+[2019-08-16 10:46:09] [DEBUG] [org.mybatis.spring.SqlSessionUtils:148]-- SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@313ec60b] was not registered for synchronization because synchronization is not active
+[2019-08-16 10:46:09] [DEBUG] [org.mybatis.spring.transaction.SpringManagedTransaction:87]-- JDBC Connection [HikariProxyConnection@1256748436 wrapping com.mysql.cj.jdbc.ConnectionImpl@45800323] will not be managed by Spring
+[2019-08-16 10:46:09] [DEBUG] [com.example.demo.manipulation.mapper.base.PersonMapper.selectByPrimaryKey:159]-- ==>  Preparing: select id, name, age, address from person where id = ? 
+[2019-08-16 10:46:09] [DEBUG] [com.example.demo.manipulation.mapper.base.PersonMapper.selectByPrimaryKey:159]-- ==> Parameters: 1(Integer)
+[2019-08-16 10:46:09] [DEBUG] [com.example.demo.manipulation.mapper.base.PersonMapper.selectByPrimaryKey:159]-- <==      Total: 1
+[2019-08-16 10:46:09] [DEBUG] [org.mybatis.spring.SqlSessionUtils:191]-- Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@313ec60b]
+[2019-08-16 10:54:16] [DEBUG] [com.example.demo.DemoApplication:53]-- Running with Spring Boot v2.0.3.RELEASE, Spring
+[2019-08-16 10:54:18] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:437]-- Identified candidate component class: file [D:\soft\apache-tomcat-8.0.24\webapps\ROOT\WEB-INF\classes\com\example\demo\manipulation\mapper\base\MenuMapper.class]
+[2019-08-16 10:54:18] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:437]-- Identified candidate component class: file [D:\soft\apache-tomcat-8.0.24\webapps\ROOT\WEB-INF\classes\com\example\demo\manipulation\mapper\base\PermissionMapper.class]
+[2019-08-16 10:54:18] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:437]-- Identified candidate component class: file [D:\soft\apache-tomcat-8.0.24\webapps\ROOT\WEB-INF\classes\com\example\demo\manipulation\mapper\base\PersonMapper.class]
+[2019-08-16 10:54:18] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:437]-- Identified candidate component class: file [D:\soft\apache-tomcat-8.0.24\webapps\ROOT\WEB-INF\classes\com\example\demo\manipulation\mapper\base\RoleMapper.class]
+[2019-08-16 10:54:18] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:437]-- Identified candidate component class: file [D:\soft\apache-tomcat-8.0.24\webapps\ROOT\WEB-INF\classes\com\example\demo\manipulation\mapper\base\RoleMenuMapper.class]
+[2019-08-16 10:54:18] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:437]-- Identified candidate component class: file [D:\soft\apache-tomcat-8.0.24\webapps\ROOT\WEB-INF\classes\com\example\demo\manipulation\mapper\base\UserMapper.class]
+[2019-08-16 10:54:18] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:180]-- Creating MapperFactoryBean with name 'menuMapper' and 'com.example.demo.manipulation.mapper.base.MenuMapper' mapperInterface
+[2019-08-16 10:54:18] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:216]-- Enabling autowire by type for MapperFactoryBean with name 'menuMapper'.
+[2019-08-16 10:54:18] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:180]-- Creating MapperFactoryBean with name 'permissionMapper' and 'com.example.demo.manipulation.mapper.base.PermissionMapper' mapperInterface
+[2019-08-16 10:54:18] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:216]-- Enabling autowire by type for MapperFactoryBean with name 'permissionMapper'.
+[2019-08-16 10:54:18] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:180]-- Creating MapperFactoryBean with name 'personMapper' and 'com.example.demo.manipulation.mapper.base.PersonMapper' mapperInterface
+[2019-08-16 10:54:18] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:216]-- Enabling autowire by type for MapperFactoryBean with name 'personMapper'.
+[2019-08-16 10:54:18] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:180]-- Creating MapperFactoryBean with name 'roleMapper' and 'com.example.demo.manipulation.mapper.base.RoleMapper' mapperInterface
+[2019-08-16 10:54:18] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:216]-- Enabling autowire by type for MapperFactoryBean with name 'roleMapper'.
+[2019-08-16 10:54:18] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:180]-- Creating MapperFactoryBean with name 'roleMenuMapper' and 'com.example.demo.manipulation.mapper.base.RoleMenuMapper' mapperInterface
+[2019-08-16 10:54:18] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:216]-- Enabling autowire by type for MapperFactoryBean with name 'roleMenuMapper'.
+[2019-08-16 10:54:18] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:180]-- Creating MapperFactoryBean with name 'userMapper' and 'com.example.demo.manipulation.mapper.base.UserMapper' mapperInterface
+[2019-08-16 10:54:18] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:216]-- Enabling autowire by type for MapperFactoryBean with name 'userMapper'.
+[2019-08-16 10:54:21] [DEBUG] [org.mybatis.spring.SqlSessionFactoryBean:437]-- Scanned package: 'com.example.demo.manipulation.entity' for aliases
+[2019-08-16 10:54:21] [DEBUG] [org.mybatis.spring.SqlSessionFactoryBean:529]-- Parsed mapper file: 'file [D:\soft\apache-tomcat-8.0.24\webapps\ROOT\WEB-INF\classes\mapper\base\MenuMapper.xml]'
+[2019-08-16 10:54:21] [DEBUG] [org.mybatis.spring.SqlSessionFactoryBean:529]-- Parsed mapper file: 'file [D:\soft\apache-tomcat-8.0.24\webapps\ROOT\WEB-INF\classes\mapper\base\PermissionMapper.xml]'
+[2019-08-16 10:54:21] [DEBUG] [org.mybatis.spring.SqlSessionFactoryBean:529]-- Parsed mapper file: 'file [D:\soft\apache-tomcat-8.0.24\webapps\ROOT\WEB-INF\classes\mapper\base\PersonMapper.xml]'
+[2019-08-16 10:54:21] [DEBUG] [org.mybatis.spring.SqlSessionFactoryBean:529]-- Parsed mapper file: 'file [D:\soft\apache-tomcat-8.0.24\webapps\ROOT\WEB-INF\classes\mapper\base\RoleMapper.xml]'
+[2019-08-16 10:54:21] [DEBUG] [org.mybatis.spring.SqlSessionFactoryBean:529]-- Parsed mapper file: 'file [D:\soft\apache-tomcat-8.0.24\webapps\ROOT\WEB-INF\classes\mapper\base\RoleMenuMapper.xml]'
+[2019-08-16 10:54:21] [DEBUG] [org.mybatis.spring.SqlSessionFactoryBean:529]-- Parsed mapper file: 'file [D:\soft\apache-tomcat-8.0.24\webapps\ROOT\WEB-INF\classes\mapper\base\UserMapper.xml]'
+[2019-08-16 10:54:23] [DEBUG] [org.springframework.transaction.annotation.AnnotationTransactionAttributeSource:117]-- Adding transactional method 'com.example.demo.manipulation.service.base.impl.PersonServiceImpl.insert' with attribute: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+[2019-08-16 10:57:58] [DEBUG] [com.example.demo.DemoApplication:53]-- Running with Spring Boot v2.0.3.RELEASE, Spring
+[2019-08-16 10:58:01] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:437]-- Identified candidate component class: file [D:\soft\apache-tomcat-8.0.24\webapps\ROOT\WEB-INF\classes\com\example\demo\manipulation\mapper\base\MenuMapper.class]
+[2019-08-16 10:58:01] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:437]-- Identified candidate component class: file [D:\soft\apache-tomcat-8.0.24\webapps\ROOT\WEB-INF\classes\com\example\demo\manipulation\mapper\base\PermissionMapper.class]
+[2019-08-16 10:58:01] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:437]-- Identified candidate component class: file [D:\soft\apache-tomcat-8.0.24\webapps\ROOT\WEB-INF\classes\com\example\demo\manipulation\mapper\base\PersonMapper.class]
+[2019-08-16 10:58:01] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:437]-- Identified candidate component class: file [D:\soft\apache-tomcat-8.0.24\webapps\ROOT\WEB-INF\classes\com\example\demo\manipulation\mapper\base\RoleMapper.class]
+[2019-08-16 10:58:01] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:437]-- Identified candidate component class: file [D:\soft\apache-tomcat-8.0.24\webapps\ROOT\WEB-INF\classes\com\example\demo\manipulation\mapper\base\RoleMenuMapper.class]
+[2019-08-16 10:58:01] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:437]-- Identified candidate component class: file [D:\soft\apache-tomcat-8.0.24\webapps\ROOT\WEB-INF\classes\com\example\demo\manipulation\mapper\base\UserMapper.class]
+[2019-08-16 10:58:01] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:180]-- Creating MapperFactoryBean with name 'menuMapper' and 'com.example.demo.manipulation.mapper.base.MenuMapper' mapperInterface
+[2019-08-16 10:58:01] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:216]-- Enabling autowire by type for MapperFactoryBean with name 'menuMapper'.
+[2019-08-16 10:58:01] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:180]-- Creating MapperFactoryBean with name 'permissionMapper' and 'com.example.demo.manipulation.mapper.base.PermissionMapper' mapperInterface
+[2019-08-16 10:58:01] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:216]-- Enabling autowire by type for MapperFactoryBean with name 'permissionMapper'.
+[2019-08-16 10:58:01] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:180]-- Creating MapperFactoryBean with name 'personMapper' and 'com.example.demo.manipulation.mapper.base.PersonMapper' mapperInterface
+[2019-08-16 10:58:01] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:216]-- Enabling autowire by type for MapperFactoryBean with name 'personMapper'.
+[2019-08-16 10:58:01] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:180]-- Creating MapperFactoryBean with name 'roleMapper' and 'com.example.demo.manipulation.mapper.base.RoleMapper' mapperInterface
+[2019-08-16 10:58:01] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:216]-- Enabling autowire by type for MapperFactoryBean with name 'roleMapper'.
+[2019-08-16 10:58:01] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:180]-- Creating MapperFactoryBean with name 'roleMenuMapper' and 'com.example.demo.manipulation.mapper.base.RoleMenuMapper' mapperInterface
+[2019-08-16 10:58:01] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:216]-- Enabling autowire by type for MapperFactoryBean with name 'roleMenuMapper'.
+[2019-08-16 10:58:01] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:180]-- Creating MapperFactoryBean with name 'userMapper' and 'com.example.demo.manipulation.mapper.base.UserMapper' mapperInterface
+[2019-08-16 10:58:01] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:216]-- Enabling autowire by type for MapperFactoryBean with name 'userMapper'.
+[2019-08-16 10:58:04] [DEBUG] [org.mybatis.spring.SqlSessionFactoryBean:437]-- Scanned package: 'com.example.demo.manipulation.entity' for aliases
+[2019-08-16 10:58:04] [DEBUG] [org.mybatis.spring.SqlSessionFactoryBean:529]-- Parsed mapper file: 'file [D:\soft\apache-tomcat-8.0.24\webapps\ROOT\WEB-INF\classes\mapper\base\MenuMapper.xml]'
+[2019-08-16 10:58:04] [DEBUG] [org.mybatis.spring.SqlSessionFactoryBean:529]-- Parsed mapper file: 'file [D:\soft\apache-tomcat-8.0.24\webapps\ROOT\WEB-INF\classes\mapper\base\PermissionMapper.xml]'
+[2019-08-16 10:58:04] [DEBUG] [org.mybatis.spring.SqlSessionFactoryBean:529]-- Parsed mapper file: 'file [D:\soft\apache-tomcat-8.0.24\webapps\ROOT\WEB-INF\classes\mapper\base\PersonMapper.xml]'
+[2019-08-16 10:58:04] [DEBUG] [org.mybatis.spring.SqlSessionFactoryBean:529]-- Parsed mapper file: 'file [D:\soft\apache-tomcat-8.0.24\webapps\ROOT\WEB-INF\classes\mapper\base\RoleMapper.xml]'
+[2019-08-16 10:58:04] [DEBUG] [org.mybatis.spring.SqlSessionFactoryBean:529]-- Parsed mapper file: 'file [D:\soft\apache-tomcat-8.0.24\webapps\ROOT\WEB-INF\classes\mapper\base\RoleMenuMapper.xml]'
+[2019-08-16 10:58:04] [DEBUG] [org.mybatis.spring.SqlSessionFactoryBean:529]-- Parsed mapper file: 'file [D:\soft\apache-tomcat-8.0.24\webapps\ROOT\WEB-INF\classes\mapper\base\UserMapper.xml]'
+[2019-08-16 10:58:06] [DEBUG] [org.springframework.transaction.annotation.AnnotationTransactionAttributeSource:117]-- Adding transactional method 'com.example.demo.manipulation.service.base.impl.PersonServiceImpl.insert' with attribute: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+[2019-08-16 10:59:04] [DEBUG] [com.example.demo.DemoApplication:53]-- Running with Spring Boot v2.0.3.RELEASE, Spring
+[2019-08-16 10:59:06] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:437]-- Identified candidate component class: file [D:\soft\apache-tomcat-8.0.24\webapps\ROOT\WEB-INF\classes\com\example\demo\manipulation\mapper\base\MenuMapper.class]
+[2019-08-16 10:59:06] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:437]-- Identified candidate component class: file [D:\soft\apache-tomcat-8.0.24\webapps\ROOT\WEB-INF\classes\com\example\demo\manipulation\mapper\base\PermissionMapper.class]
+[2019-08-16 10:59:06] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:437]-- Identified candidate component class: file [D:\soft\apache-tomcat-8.0.24\webapps\ROOT\WEB-INF\classes\com\example\demo\manipulation\mapper\base\PersonMapper.class]
+[2019-08-16 10:59:06] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:437]-- Identified candidate component class: file [D:\soft\apache-tomcat-8.0.24\webapps\ROOT\WEB-INF\classes\com\example\demo\manipulation\mapper\base\RoleMapper.class]
+[2019-08-16 10:59:06] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:437]-- Identified candidate component class: file [D:\soft\apache-tomcat-8.0.24\webapps\ROOT\WEB-INF\classes\com\example\demo\manipulation\mapper\base\RoleMenuMapper.class]
+[2019-08-16 10:59:06] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:437]-- Identified candidate component class: file [D:\soft\apache-tomcat-8.0.24\webapps\ROOT\WEB-INF\classes\com\example\demo\manipulation\mapper\base\UserMapper.class]
+[2019-08-16 10:59:06] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:180]-- Creating MapperFactoryBean with name 'menuMapper' and 'com.example.demo.manipulation.mapper.base.MenuMapper' mapperInterface
+[2019-08-16 10:59:06] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:216]-- Enabling autowire by type for MapperFactoryBean with name 'menuMapper'.
+[2019-08-16 10:59:06] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:180]-- Creating MapperFactoryBean with name 'permissionMapper' and 'com.example.demo.manipulation.mapper.base.PermissionMapper' mapperInterface
+[2019-08-16 10:59:06] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:216]-- Enabling autowire by type for MapperFactoryBean with name 'permissionMapper'.
+[2019-08-16 10:59:06] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:180]-- Creating MapperFactoryBean with name 'personMapper' and 'com.example.demo.manipulation.mapper.base.PersonMapper' mapperInterface
+[2019-08-16 10:59:06] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:216]-- Enabling autowire by type for MapperFactoryBean with name 'personMapper'.
+[2019-08-16 10:59:06] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:180]-- Creating MapperFactoryBean with name 'roleMapper' and 'com.example.demo.manipulation.mapper.base.RoleMapper' mapperInterface
+[2019-08-16 10:59:06] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:216]-- Enabling autowire by type for MapperFactoryBean with name 'roleMapper'.
+[2019-08-16 10:59:06] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:180]-- Creating MapperFactoryBean with name 'roleMenuMapper' and 'com.example.demo.manipulation.mapper.base.RoleMenuMapper' mapperInterface
+[2019-08-16 10:59:06] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:216]-- Enabling autowire by type for MapperFactoryBean with name 'roleMenuMapper'.
+[2019-08-16 10:59:06] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:180]-- Creating MapperFactoryBean with name 'userMapper' and 'com.example.demo.manipulation.mapper.base.UserMapper' mapperInterface
+[2019-08-16 10:59:06] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:216]-- Enabling autowire by type for MapperFactoryBean with name 'userMapper'.
+[2019-08-16 10:59:09] [DEBUG] [org.mybatis.spring.SqlSessionFactoryBean:437]-- Scanned package: 'com.example.demo.manipulation.entity' for aliases
+[2019-08-16 10:59:09] [DEBUG] [org.mybatis.spring.SqlSessionFactoryBean:529]-- Parsed mapper file: 'file [D:\soft\apache-tomcat-8.0.24\webapps\ROOT\WEB-INF\classes\mapper\base\MenuMapper.xml]'
+[2019-08-16 10:59:09] [DEBUG] [org.mybatis.spring.SqlSessionFactoryBean:529]-- Parsed mapper file: 'file [D:\soft\apache-tomcat-8.0.24\webapps\ROOT\WEB-INF\classes\mapper\base\PermissionMapper.xml]'
+[2019-08-16 10:59:09] [DEBUG] [org.mybatis.spring.SqlSessionFactoryBean:529]-- Parsed mapper file: 'file [D:\soft\apache-tomcat-8.0.24\webapps\ROOT\WEB-INF\classes\mapper\base\PersonMapper.xml]'
+[2019-08-16 10:59:10] [DEBUG] [org.mybatis.spring.SqlSessionFactoryBean:529]-- Parsed mapper file: 'file [D:\soft\apache-tomcat-8.0.24\webapps\ROOT\WEB-INF\classes\mapper\base\RoleMapper.xml]'
+[2019-08-16 10:59:10] [DEBUG] [org.mybatis.spring.SqlSessionFactoryBean:529]-- Parsed mapper file: 'file [D:\soft\apache-tomcat-8.0.24\webapps\ROOT\WEB-INF\classes\mapper\base\RoleMenuMapper.xml]'
+[2019-08-16 10:59:10] [DEBUG] [org.mybatis.spring.SqlSessionFactoryBean:529]-- Parsed mapper file: 'file [D:\soft\apache-tomcat-8.0.24\webapps\ROOT\WEB-INF\classes\mapper\base\UserMapper.xml]'
+[2019-08-16 10:59:11] [DEBUG] [org.springframework.transaction.annotation.AnnotationTransactionAttributeSource:117]-- Adding transactional method 'com.example.demo.manipulation.service.base.impl.PersonServiceImpl.insert' with attribute: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+[2019-08-16 11:06:59] [DEBUG] [com.example.demo.DemoApplication:53]-- Running with Spring Boot v2.0.3.RELEASE, Spring
+[2019-08-16 11:07:01] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:437]-- Identified candidate component class: file [D:\soft\apache-tomcat-8.0.24\webapps\ROOT\WEB-INF\classes\com\example\demo\manipulation\mapper\base\MenuMapper.class]
+[2019-08-16 11:07:01] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:437]-- Identified candidate component class: file [D:\soft\apache-tomcat-8.0.24\webapps\ROOT\WEB-INF\classes\com\example\demo\manipulation\mapper\base\PermissionMapper.class]
+[2019-08-16 11:07:01] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:437]-- Identified candidate component class: file [D:\soft\apache-tomcat-8.0.24\webapps\ROOT\WEB-INF\classes\com\example\demo\manipulation\mapper\base\PersonMapper.class]
+[2019-08-16 11:07:02] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:437]-- Identified candidate component class: file [D:\soft\apache-tomcat-8.0.24\webapps\ROOT\WEB-INF\classes\com\example\demo\manipulation\mapper\base\RoleMapper.class]
+[2019-08-16 11:07:02] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:437]-- Identified candidate component class: file [D:\soft\apache-tomcat-8.0.24\webapps\ROOT\WEB-INF\classes\com\example\demo\manipulation\mapper\base\RoleMenuMapper.class]
+[2019-08-16 11:07:02] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:437]-- Identified candidate component class: file [D:\soft\apache-tomcat-8.0.24\webapps\ROOT\WEB-INF\classes\com\example\demo\manipulation\mapper\base\UserMapper.class]
+[2019-08-16 11:07:02] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:180]-- Creating MapperFactoryBean with name 'menuMapper' and 'com.example.demo.manipulation.mapper.base.MenuMapper' mapperInterface
+[2019-08-16 11:07:02] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:216]-- Enabling autowire by type for MapperFactoryBean with name 'menuMapper'.
+[2019-08-16 11:07:02] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:180]-- Creating MapperFactoryBean with name 'permissionMapper' and 'com.example.demo.manipulation.mapper.base.PermissionMapper' mapperInterface
+[2019-08-16 11:07:02] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:216]-- Enabling autowire by type for MapperFactoryBean with name 'permissionMapper'.
+[2019-08-16 11:07:02] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:180]-- Creating MapperFactoryBean with name 'personMapper' and 'com.example.demo.manipulation.mapper.base.PersonMapper' mapperInterface
+[2019-08-16 11:07:02] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:216]-- Enabling autowire by type for MapperFactoryBean with name 'personMapper'.
+[2019-08-16 11:07:02] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:180]-- Creating MapperFactoryBean with name 'roleMapper' and 'com.example.demo.manipulation.mapper.base.RoleMapper' mapperInterface
+[2019-08-16 11:07:02] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:216]-- Enabling autowire by type for MapperFactoryBean with name 'roleMapper'.
+[2019-08-16 11:07:02] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:180]-- Creating MapperFactoryBean with name 'roleMenuMapper' and 'com.example.demo.manipulation.mapper.base.RoleMenuMapper' mapperInterface
+[2019-08-16 11:07:02] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:216]-- Enabling autowire by type for MapperFactoryBean with name 'roleMenuMapper'.
+[2019-08-16 11:07:02] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:180]-- Creating MapperFactoryBean with name 'userMapper' and 'com.example.demo.manipulation.mapper.base.UserMapper' mapperInterface
+[2019-08-16 11:07:02] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:216]-- Enabling autowire by type for MapperFactoryBean with name 'userMapper'.
+[2019-08-16 11:07:05] [DEBUG] [org.mybatis.spring.SqlSessionFactoryBean:437]-- Scanned package: 'com.example.demo.manipulation.entity' for aliases
+[2019-08-16 11:07:05] [DEBUG] [org.mybatis.spring.SqlSessionFactoryBean:529]-- Parsed mapper file: 'file [D:\soft\apache-tomcat-8.0.24\webapps\ROOT\WEB-INF\classes\mapper\base\MenuMapper.xml]'
+[2019-08-16 11:07:06] [DEBUG] [org.mybatis.spring.SqlSessionFactoryBean:529]-- Parsed mapper file: 'file [D:\soft\apache-tomcat-8.0.24\webapps\ROOT\WEB-INF\classes\mapper\base\PermissionMapper.xml]'
+[2019-08-16 11:07:06] [DEBUG] [org.mybatis.spring.SqlSessionFactoryBean:529]-- Parsed mapper file: 'file [D:\soft\apache-tomcat-8.0.24\webapps\ROOT\WEB-INF\classes\mapper\base\PersonMapper.xml]'
+[2019-08-16 11:07:06] [DEBUG] [org.mybatis.spring.SqlSessionFactoryBean:529]-- Parsed mapper file: 'file [D:\soft\apache-tomcat-8.0.24\webapps\ROOT\WEB-INF\classes\mapper\base\RoleMapper.xml]'
+[2019-08-16 11:07:06] [DEBUG] [org.mybatis.spring.SqlSessionFactoryBean:529]-- Parsed mapper file: 'file [D:\soft\apache-tomcat-8.0.24\webapps\ROOT\WEB-INF\classes\mapper\base\RoleMenuMapper.xml]'
+[2019-08-16 11:07:06] [DEBUG] [org.mybatis.spring.SqlSessionFactoryBean:529]-- Parsed mapper file: 'file [D:\soft\apache-tomcat-8.0.24\webapps\ROOT\WEB-INF\classes\mapper\base\UserMapper.xml]'
+[2019-08-16 11:07:08] [DEBUG] [org.springframework.transaction.annotation.AnnotationTransactionAttributeSource:117]-- Adding transactional method 'com.example.demo.manipulation.service.base.impl.PersonServiceImpl.insert' with attribute: PROPAGATION_REQUIRED,ISOLATION_DEFAULT; ''
+[2019-08-16 11:12:40] [DEBUG] [com.example.demo.DemoApplication:53]-- Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
+[2019-08-16 11:12:42] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:437]-- Identified candidate component class: file [D:\tomcat\apache-tomcat-8.0.48\webapps\demo-0.0.1-SNAPSHOT\WEB-INF\classes\com\example\demo\manipulation\mapper\base\MenuMapper.class]
+[2019-08-16 11:12:42] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:437]-- Identified candidate component class: file [D:\tomcat\apache-tomcat-8.0.48\webapps\demo-0.0.1-SNAPSHOT\WEB-INF\classes\com\example\demo\manipulation\mapper\base\PermissionMapper.class]
+[2019-08-16 11:12:42] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:437]-- Identified candidate component class: file [D:\tomcat\apache-tomcat-8.0.48\webapps\demo-0.0.1-SNAPSHOT\WEB-INF\classes\com\example\demo\manipulation\mapper\base\PersonMapper.class]
+[2019-08-16 11:12:42] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:437]-- Identified candidate component class: file [D:\tomcat\apache-tomcat-8.0.48\webapps\demo-0.0.1-SNAPSHOT\WEB-INF\classes\com\example\demo\manipulation\mapper\base\RoleMapper.class]
+[2019-08-16 11:12:42] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:437]-- Identified candidate component class: file [D:\tomcat\apache-tomcat-8.0.48\webapps\demo-0.0.1-SNAPSHOT\WEB-INF\classes\com\example\demo\manipulation\mapper\base\RoleMenuMapper.class]
+[2019-08-16 11:12:42] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:437]-- Identified candidate component class: file [D:\tomcat\apache-tomcat-8.0.48\webapps\demo-0.0.1-SNAPSHOT\WEB-INF\classes\com\example\demo\manipulation\mapper\base\UserMapper.class]
+[2019-08-16 11:12:42] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:180]-- Creating MapperFactoryBean with name 'menuMapper' and 'com.example.demo.manipulation.mapper.base.MenuMapper' mapperInterface
+[2019-08-16 11:12:42] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:216]-- Enabling autowire by type for MapperFactoryBean with name 'menuMapper'.
+[2019-08-16 11:12:42] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:180]-- Creating MapperFactoryBean with name 'permissionMapper' and 'com.example.demo.manipulation.mapper.base.PermissionMapper' mapperInterface
+[2019-08-16 11:12:42] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:216]-- Enabling autowire by type for MapperFactoryBean with name 'permissionMapper'.
+[2019-08-16 11:12:42] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:180]-- Creating MapperFactoryBean with name 'personMapper' and 'com.example.demo.manipulation.mapper.base.PersonMapper' mapperInterface
+[2019-08-16 11:12:42] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:216]-- Enabling autowire by type for MapperFactoryBean with name 'personMapper'.
+[2019-08-16 11:12:42] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:180]-- Creating MapperFactoryBean with name 'roleMapper' and 'com.example.demo.manipulation.mapper.base.RoleMapper' mapperInterface
+[2019-08-16 11:12:42] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:216]-- Enabling autowire by type for MapperFactoryBean with name 'roleMapper'.
+[2019-08-16 11:12:42] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:180]-- Creating MapperFactoryBean with name 'roleMenuMapper' and 'com.example.demo.manipulation.mapper.base.RoleMenuMapper' mapperInterface
+[2019-08-16 11:12:42] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:216]-- Enabling autowire by type for MapperFactoryBean with name 'roleMenuMapper'.
+[2019-08-16 11:12:42] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:180]-- Creating MapperFactoryBean with name 'userMapper' and 'com.example.demo.manipulation.mapper.base.UserMapper' mapperInterface
+[2019-08-16 11:12:42] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:216]-- Enabling autowire by type for MapperFactoryBean with name 'userMapper'.
+[2019-08-16 11:12:45] [DEBUG] [org.mybatis.spring.SqlSessionFactoryBean:437]-- Scanned package: 'com.example.demo.manipulation.entity' for aliases
+[2019-08-16 11:12:46] [DEBUG] [org.mybatis.spring.SqlSessionFactoryBean:529]-- Parsed mapper file: 'file [D:\tomcat\apache-tomcat-8.0.48\webapps\demo-0.0.1-SNAPSHOT\WEB-INF\classes\mapper\base\MenuMapper.xml]'
+[2019-08-16 11:12:46] [DEBUG] [org.mybatis.spring.SqlSessionFactoryBean:529]-- Parsed mapper file: 'file [D:\tomcat\apache-tomcat-8.0.48\webapps\demo-0.0.1-SNAPSHOT\WEB-INF\classes\mapper\base\PermissionMapper.xml]'
+[2019-08-16 11:12:46] [DEBUG] [org.mybatis.spring.SqlSessionFactoryBean:529]-- Parsed mapper file: 'file [D:\tomcat\apache-tomcat-8.0.48\webapps\demo-0.0.1-SNAPSHOT\WEB-INF\classes\mapper\base\PersonMapper.xml]'
+[2019-08-16 11:12:46] [DEBUG] [org.mybatis.spring.SqlSessionFactoryBean:529]-- Parsed mapper file: 'file [D:\tomcat\apache-tomcat-8.0.48\webapps\demo-0.0.1-SNAPSHOT\WEB-INF\classes\mapper\base\RoleMapper.xml]'
+[2019-08-16 11:12:46] [DEBUG] [org.mybatis.spring.SqlSessionFactoryBean:529]-- Parsed mapper file: 'file [D:\tomcat\apache-tomcat-8.0.48\webapps\demo-0.0.1-SNAPSHOT\WEB-INF\classes\mapper\base\RoleMenuMapper.xml]'
+[2019-08-16 11:12:46] [DEBUG] [org.mybatis.spring.SqlSessionFactoryBean:529]-- Parsed mapper file: 'file [D:\tomcat\apache-tomcat-8.0.48\webapps\demo-0.0.1-SNAPSHOT\WEB-INF\classes\mapper\base\UserMapper.xml]'
+[2019-08-16 11:23:38] [DEBUG] [com.example.demo.DemoApplication:53]-- Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
+[2019-08-16 11:23:40] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:437]-- Identified candidate component class: file [D:\tomcat\apache-tomcat-8.5.24-springboot\webapps\ROOT\WEB-INF\classes\com\example\demo\manipulation\mapper\base\MenuMapper.class]
+[2019-08-16 11:23:40] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:437]-- Identified candidate component class: file [D:\tomcat\apache-tomcat-8.5.24-springboot\webapps\ROOT\WEB-INF\classes\com\example\demo\manipulation\mapper\base\PermissionMapper.class]
+[2019-08-16 11:23:40] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:437]-- Identified candidate component class: file [D:\tomcat\apache-tomcat-8.5.24-springboot\webapps\ROOT\WEB-INF\classes\com\example\demo\manipulation\mapper\base\PersonMapper.class]
+[2019-08-16 11:23:40] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:437]-- Identified candidate component class: file [D:\tomcat\apache-tomcat-8.5.24-springboot\webapps\ROOT\WEB-INF\classes\com\example\demo\manipulation\mapper\base\RoleMapper.class]
+[2019-08-16 11:23:40] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:437]-- Identified candidate component class: file [D:\tomcat\apache-tomcat-8.5.24-springboot\webapps\ROOT\WEB-INF\classes\com\example\demo\manipulation\mapper\base\RoleMenuMapper.class]
+[2019-08-16 11:23:40] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:437]-- Identified candidate component class: file [D:\tomcat\apache-tomcat-8.5.24-springboot\webapps\ROOT\WEB-INF\classes\com\example\demo\manipulation\mapper\base\UserMapper.class]
+[2019-08-16 11:23:40] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:180]-- Creating MapperFactoryBean with name 'menuMapper' and 'com.example.demo.manipulation.mapper.base.MenuMapper' mapperInterface
+[2019-08-16 11:23:40] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:216]-- Enabling autowire by type for MapperFactoryBean with name 'menuMapper'.
+[2019-08-16 11:23:40] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:180]-- Creating MapperFactoryBean with name 'permissionMapper' and 'com.example.demo.manipulation.mapper.base.PermissionMapper' mapperInterface
+[2019-08-16 11:23:40] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:216]-- Enabling autowire by type for MapperFactoryBean with name 'permissionMapper'.
+[2019-08-16 11:23:40] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:180]-- Creating MapperFactoryBean with name 'personMapper' and 'com.example.demo.manipulation.mapper.base.PersonMapper' mapperInterface
+[2019-08-16 11:23:40] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:216]-- Enabling autowire by type for MapperFactoryBean with name 'personMapper'.
+[2019-08-16 11:23:40] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:180]-- Creating MapperFactoryBean with name 'roleMapper' and 'com.example.demo.manipulation.mapper.base.RoleMapper' mapperInterface
+[2019-08-16 11:23:40] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:216]-- Enabling autowire by type for MapperFactoryBean with name 'roleMapper'.
+[2019-08-16 11:23:40] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:180]-- Creating MapperFactoryBean with name 'roleMenuMapper' and 'com.example.demo.manipulation.mapper.base.RoleMenuMapper' mapperInterface
+[2019-08-16 11:23:40] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:216]-- Enabling autowire by type for MapperFactoryBean with name 'roleMenuMapper'.
+[2019-08-16 11:23:40] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:180]-- Creating MapperFactoryBean with name 'userMapper' and 'com.example.demo.manipulation.mapper.base.UserMapper' mapperInterface
+[2019-08-16 11:23:40] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:216]-- Enabling autowire by type for MapperFactoryBean with name 'userMapper'.
+[2019-08-16 11:23:43] [DEBUG] [org.mybatis.spring.SqlSessionFactoryBean:437]-- Scanned package: 'com.example.demo.manipulation.entity' for aliases
+[2019-08-16 11:23:44] [DEBUG] [org.mybatis.spring.SqlSessionFactoryBean:529]-- Parsed mapper file: 'file [D:\tomcat\apache-tomcat-8.5.24-springboot\webapps\ROOT\WEB-INF\classes\mapper\base\MenuMapper.xml]'
+[2019-08-16 11:23:44] [DEBUG] [org.mybatis.spring.SqlSessionFactoryBean:529]-- Parsed mapper file: 'file [D:\tomcat\apache-tomcat-8.5.24-springboot\webapps\ROOT\WEB-INF\classes\mapper\base\PermissionMapper.xml]'
+[2019-08-16 11:23:44] [DEBUG] [org.mybatis.spring.SqlSessionFactoryBean:529]-- Parsed mapper file: 'file [D:\tomcat\apache-tomcat-8.5.24-springboot\webapps\ROOT\WEB-INF\classes\mapper\base\PersonMapper.xml]'
+[2019-08-16 11:23:44] [DEBUG] [org.mybatis.spring.SqlSessionFactoryBean:529]-- Parsed mapper file: 'file [D:\tomcat\apache-tomcat-8.5.24-springboot\webapps\ROOT\WEB-INF\classes\mapper\base\RoleMapper.xml]'
+[2019-08-16 11:23:44] [DEBUG] [org.mybatis.spring.SqlSessionFactoryBean:529]-- Parsed mapper file: 'file [D:\tomcat\apache-tomcat-8.5.24-springboot\webapps\ROOT\WEB-INF\classes\mapper\base\RoleMenuMapper.xml]'
+[2019-08-16 11:23:44] [DEBUG] [org.mybatis.spring.SqlSessionFactoryBean:529]-- Parsed mapper file: 'file [D:\tomcat\apache-tomcat-8.5.24-springboot\webapps\ROOT\WEB-INF\classes\mapper\base\UserMapper.xml]'
+[2019-08-16 11:23:55] [DEBUG] [org.mybatis.spring.SqlSessionUtils:97]-- Creating a new SqlSession
+[2019-08-16 11:23:55] [DEBUG] [org.mybatis.spring.SqlSessionUtils:148]-- SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@92a9fed] was not registered for synchronization because synchronization is not active
+[2019-08-16 11:23:55] [DEBUG] [org.mybatis.spring.transaction.SpringManagedTransaction:87]-- JDBC Connection [HikariProxyConnection@286880546 wrapping com.mysql.cj.jdbc.ConnectionImpl@3f539ee] will not be managed by Spring
+[2019-08-16 11:23:55] [DEBUG] [com.example.demo.manipulation.mapper.base.RoleMapper.selectAllRoles_COUNT:159]-- ==>  Preparing: SELECT count(0) FROM role r WHERE 1 = 1 
+[2019-08-16 11:23:55] [DEBUG] [com.example.demo.manipulation.mapper.base.RoleMapper.selectAllRoles_COUNT:159]-- ==> Parameters: 
+[2019-08-16 11:23:56] [DEBUG] [com.example.demo.manipulation.mapper.base.RoleMapper.selectAllRoles_COUNT:159]-- <==      Total: 1
+[2019-08-16 11:23:56] [DEBUG] [com.example.demo.manipulation.mapper.base.RoleMapper.selectAllRoles:159]-- ==>  Preparing: SELECT r.* FROM role r WHERE 1 = 1 LIMIT ? 
+[2019-08-16 11:23:56] [DEBUG] [com.example.demo.manipulation.mapper.base.RoleMapper.selectAllRoles:159]-- ==> Parameters: 2(Integer)
+[2019-08-16 11:23:56] [DEBUG] [com.example.demo.manipulation.mapper.base.RoleMapper.selectAllRoles:159]-- <==      Total: 2
+[2019-08-16 11:23:56] [DEBUG] [org.mybatis.spring.SqlSessionUtils:191]-- Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@92a9fed]
+[2019-08-16 11:24:23] [DEBUG] [org.mybatis.spring.SqlSessionUtils:97]-- Creating a new SqlSession
+[2019-08-16 11:24:23] [DEBUG] [org.mybatis.spring.SqlSessionUtils:148]-- SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@45496307] was not registered for synchronization because synchronization is not active
+[2019-08-16 11:24:23] [DEBUG] [org.mybatis.spring.transaction.SpringManagedTransaction:87]-- JDBC Connection [HikariProxyConnection@2052288058 wrapping com.mysql.cj.jdbc.ConnectionImpl@3f539ee] will not be managed by Spring
+[2019-08-16 11:24:23] [DEBUG] [com.example.demo.manipulation.mapper.base.PersonMapper.selectByPrimaryKey:159]-- ==>  Preparing: select id, name, age, address from person where id = ? 
+[2019-08-16 11:24:23] [DEBUG] [com.example.demo.manipulation.mapper.base.PersonMapper.selectByPrimaryKey:159]-- ==> Parameters: 1(Integer)
+[2019-08-16 11:24:23] [DEBUG] [com.example.demo.manipulation.mapper.base.PersonMapper.selectByPrimaryKey:159]-- <==      Total: 1
+[2019-08-16 11:24:23] [DEBUG] [org.mybatis.spring.SqlSessionUtils:191]-- Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@45496307]
+[2019-08-16 14:36:12] [DEBUG] [com.example.demo.DemoApplication:53]-- Running with Spring Boot v2.1.6.RELEASE, Spring v5.1.8.RELEASE
+[2019-08-16 14:36:13] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:437]-- Identified candidate component class: file [F:\soft\coder\HkwDemo\target\classes\com\example\demo\manipulation\mapper\base\MenuMapper.class]
+[2019-08-16 14:36:13] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:437]-- Identified candidate component class: file [F:\soft\coder\HkwDemo\target\classes\com\example\demo\manipulation\mapper\base\PermissionMapper.class]
+[2019-08-16 14:36:13] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:437]-- Identified candidate component class: file [F:\soft\coder\HkwDemo\target\classes\com\example\demo\manipulation\mapper\base\PersonMapper.class]
+[2019-08-16 14:36:13] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:437]-- Identified candidate component class: file [F:\soft\coder\HkwDemo\target\classes\com\example\demo\manipulation\mapper\base\RoleMapper.class]
+[2019-08-16 14:36:13] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:437]-- Identified candidate component class: file [F:\soft\coder\HkwDemo\target\classes\com\example\demo\manipulation\mapper\base\RoleMenuMapper.class]
+[2019-08-16 14:36:13] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:437]-- Identified candidate component class: file [F:\soft\coder\HkwDemo\target\classes\com\example\demo\manipulation\mapper\base\UserMapper.class]
+[2019-08-16 14:36:13] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:180]-- Creating MapperFactoryBean with name 'menuMapper' and 'com.example.demo.manipulation.mapper.base.MenuMapper' mapperInterface
+[2019-08-16 14:36:13] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:216]-- Enabling autowire by type for MapperFactoryBean with name 'menuMapper'.
+[2019-08-16 14:36:13] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:180]-- Creating MapperFactoryBean with name 'permissionMapper' and 'com.example.demo.manipulation.mapper.base.PermissionMapper' mapperInterface
+[2019-08-16 14:36:13] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:216]-- Enabling autowire by type for MapperFactoryBean with name 'permissionMapper'.
+[2019-08-16 14:36:13] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:180]-- Creating MapperFactoryBean with name 'personMapper' and 'com.example.demo.manipulation.mapper.base.PersonMapper' mapperInterface
+[2019-08-16 14:36:13] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:216]-- Enabling autowire by type for MapperFactoryBean with name 'personMapper'.
+[2019-08-16 14:36:13] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:180]-- Creating MapperFactoryBean with name 'roleMapper' and 'com.example.demo.manipulation.mapper.base.RoleMapper' mapperInterface
+[2019-08-16 14:36:13] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:216]-- Enabling autowire by type for MapperFactoryBean with name 'roleMapper'.
+[2019-08-16 14:36:13] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:180]-- Creating MapperFactoryBean with name 'roleMenuMapper' and 'com.example.demo.manipulation.mapper.base.RoleMenuMapper' mapperInterface
+[2019-08-16 14:36:13] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:216]-- Enabling autowire by type for MapperFactoryBean with name 'roleMenuMapper'.
+[2019-08-16 14:36:13] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:180]-- Creating MapperFactoryBean with name 'userMapper' and 'com.example.demo.manipulation.mapper.base.UserMapper' mapperInterface
+[2019-08-16 14:36:13] [DEBUG] [org.mybatis.spring.mapper.ClassPathMapperScanner:216]-- Enabling autowire by type for MapperFactoryBean with name 'userMapper'.
+[2019-08-16 14:36:14] [DEBUG] [org.mybatis.spring.SqlSessionFactoryBean:437]-- Scanned package: 'com.example.demo.manipulation.entity' for aliases
+[2019-08-16 14:36:14] [DEBUG] [org.mybatis.spring.SqlSessionFactoryBean:529]-- Parsed mapper file: 'file [F:\soft\coder\HkwDemo\target\classes\mapper\base\MenuMapper.xml]'
+[2019-08-16 14:36:14] [DEBUG] [org.mybatis.spring.SqlSessionFactoryBean:529]-- Parsed mapper file: 'file [F:\soft\coder\HkwDemo\target\classes\mapper\base\PermissionMapper.xml]'
+[2019-08-16 14:36:14] [DEBUG] [org.mybatis.spring.SqlSessionFactoryBean:529]-- Parsed mapper file: 'file [F:\soft\coder\HkwDemo\target\classes\mapper\base\PersonMapper.xml]'
+[2019-08-16 14:36:14] [DEBUG] [org.mybatis.spring.SqlSessionFactoryBean:529]-- Parsed mapper file: 'file [F:\soft\coder\HkwDemo\target\classes\mapper\base\RoleMapper.xml]'
+[2019-08-16 14:36:14] [DEBUG] [org.mybatis.spring.SqlSessionFactoryBean:529]-- Parsed mapper file: 'file [F:\soft\coder\HkwDemo\target\classes\mapper\base\RoleMenuMapper.xml]'
+[2019-08-16 14:36:14] [DEBUG] [org.mybatis.spring.SqlSessionFactoryBean:529]-- Parsed mapper file: 'file [F:\soft\coder\HkwDemo\target\classes\mapper\base\UserMapper.xml]'
+[2019-08-16 14:36:42] [DEBUG] [org.mybatis.spring.SqlSessionUtils:97]-- Creating a new SqlSession
+[2019-08-16 14:36:42] [DEBUG] [org.mybatis.spring.SqlSessionUtils:148]-- SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2e5660e1] was not registered for synchronization because synchronization is not active
+[2019-08-16 14:36:42] [DEBUG] [org.mybatis.spring.transaction.SpringManagedTransaction:87]-- JDBC Connection [HikariProxyConnection@1312485740 wrapping com.mysql.cj.jdbc.ConnectionImpl@380d7e71] will not be managed by Spring
+[2019-08-16 14:36:42] [DEBUG] [com.example.demo.manipulation.mapper.base.RoleMapper.selectAllRoles_COUNT:159]-- ==>  Preparing: SELECT count(0) FROM role r WHERE 1 = 1 
+[2019-08-16 14:36:42] [DEBUG] [com.example.demo.manipulation.mapper.base.RoleMapper.selectAllRoles_COUNT:159]-- ==> Parameters: 
+[2019-08-16 14:36:42] [DEBUG] [com.example.demo.manipulation.mapper.base.RoleMapper.selectAllRoles_COUNT:159]-- <==      Total: 1
+[2019-08-16 14:36:42] [DEBUG] [com.example.demo.manipulation.mapper.base.RoleMapper.selectAllRoles:159]-- ==>  Preparing: SELECT r.* FROM role r WHERE 1 = 1 LIMIT ? 
+[2019-08-16 14:36:42] [DEBUG] [com.example.demo.manipulation.mapper.base.RoleMapper.selectAllRoles:159]-- ==> Parameters: 2(Integer)
+[2019-08-16 14:36:42] [DEBUG] [com.example.demo.manipulation.mapper.base.RoleMapper.selectAllRoles:159]-- <==      Total: 2
+[2019-08-16 14:36:42] [DEBUG] [org.mybatis.spring.SqlSessionUtils:191]-- Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@2e5660e1]

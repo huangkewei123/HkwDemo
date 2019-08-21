@@ -1,0 +1,11 @@
+[2019-08-16 10:42:58] [WARN ] [org.thymeleaf.templatemode.TemplateMode:150]-- [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+[2019-08-16 10:43:40] [WARN ] [com.zaxxer.hikari.util.DriverDataSource:68]-- Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+[2019-08-16 10:54:25] [WARN ] [org.thymeleaf.templatemode.TemplateMode:150]-- [THYMELEAF][localhost-startStop-1] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+[2019-08-16 10:58:10] [WARN ] [org.thymeleaf.templatemode.TemplateMode:150]-- [THYMELEAF][localhost-startStop-1] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+[2019-08-16 10:59:14] [WARN ] [org.thymeleaf.templatemode.TemplateMode:150]-- [THYMELEAF][localhost-startStop-1] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+[2019-08-16 11:07:11] [WARN ] [org.thymeleaf.templatemode.TemplateMode:150]-- [THYMELEAF][localhost-startStop-1] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+[2019-08-16 11:12:50] [WARN ] [org.thymeleaf.templatemode.TemplateMode:150]-- [THYMELEAF][localhost-startStop-1] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+[2019-08-16 11:23:48] [WARN ] [org.thymeleaf.templatemode.TemplateMode:150]-- [THYMELEAF][localhost-startStop-1] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+[2019-08-16 11:23:55] [WARN ] [com.zaxxer.hikari.util.DriverDataSource:68]-- Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+[2019-08-16 14:36:16] [WARN ] [org.thymeleaf.templatemode.TemplateMode:150]-- [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+[2019-08-16 14:36:42] [WARN ] [com.zaxxer.hikari.util.DriverDataSource:68]-- Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
