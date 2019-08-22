@@ -2,8 +2,13 @@ package com.example.demo.jee.cache;
 
 import com.example.demo.jee.cache.FastJsonRedisSerializer;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.CachingConfigurerSupport;
 import org.springframework.cache.annotation.EnableCaching;
@@ -16,10 +21,7 @@ import org.springframework.data.redis.cache.RedisCacheWriter;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
-import org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer;
-import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
-import org.springframework.data.redis.serializer.RedisSerializer;
-import org.springframework.data.redis.serializer.StringRedisSerializer;
+import org.springframework.data.redis.serializer.*;
 
 import java.lang.reflect.Method;
 import java.time.Duration;
@@ -39,12 +41,22 @@ public class CacheConfig extends CachingConfigurerSupport {
 
     private Logger logger = Logger.getLogger("CacheConfig");
 
+    /**
+     * 设置 redis 数据默认过期时间
+     * 设置@cacheable 序列化方式
+     * @return
+     */
+
     @Bean
     public CacheManager cacheManager(RedisConnectionFactory connectionFactory) {
         RedisCacheConfiguration config = RedisCacheConfiguration.defaultCacheConfig();  // 生成一个默认配置，通过config对象即可对缓存进行自定义配置
-        config = config.entryTtl(Duration.ofSeconds(60))     // 设置缓存的默认过期时间，也是使用Duration设置
+        //使用fastjson序列化
+        FastJsonRedisSerializer fastJsonRedisSerializer = this.fastJsonRedisSerializer();
+        Jackson2JsonRedisSerializer jackson2JsonRedisSerializer = this.jackson2JsonRedisSerializer();
+        config = config.serializeValuesWith(RedisSerializationContext.SerializationPair.fromSerializer(jackson2JsonRedisSerializer)).entryTtl(Duration.ofSeconds(60))     // 设置缓存的默认过期时间，也是使用Duration设置
                 .disableCachingNullValues();     // 不缓存空值
-
+//        config = config.entryTtl(Duration.ofSeconds(60))
+//               .disableCachingNullValues();
         RedisCacheManager cacheManager = RedisCacheManager.builder(connectionFactory).cacheDefaults(config).transactionAware().build();
 
         // 设置一个初始化的缓存空间set集合
@@ -64,43 +76,20 @@ public class CacheConfig extends CachingConfigurerSupport {
         return  cacheManager;
     }
 
-    /*@Bean
-    public RedisTemplate<String, String> redisTemplate(RedisConnectionFactory factory) {
-        RedisTemplate<String, String> redisTemplate = new RedisTemplate<>();
-        redisTemplate.setConnectionFactory(factory);
-        //key序列化方式,但是如果方法上有Long等非String类型的话，会报类型转换错误
-        //所以在没有自己定义key生成策略的时候，以下这个代码建议不要这么写，可以不配置或者自己实现ObjectRedisSerializer
-        RedisSerializer<String> redisSerializer = new StringRedisSerializer();//Long类型不可以会出现异常信息;
-        redisTemplate.setKeySerializer(redisSerializer);
-        Jackson2JsonRedisSerializer jackson2JsonRedisSerializer = new Jackson2JsonRedisSerializer(Object.class);
-        ObjectMapper om = new ObjectMapper();
-        om.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);
-        om.enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL);
-        jackson2JsonRedisSerializer.setObjectMapper(om);
-
-        redisTemplate.setValueSerializer(jackson2JsonRedisSerializer);
-        redisTemplate.setHashValueSerializer(jackson2JsonRedisSerializer);
-        redisTemplate.afterPropertiesSet();
-
-
-       return redisTemplate;
-    }*/
-
     @Bean
     public RedisTemplate<Object, Object> redisTemplate(
             RedisConnectionFactory redisConnectionFactory) {
         RedisTemplate<Object, Object> template = new RedisTemplate<>();
-
+        template.setConnectionFactory(redisConnectionFactory);
         //使用fastjson序列化
-        FastJsonRedisSerializer fastJsonRedisSerializer = new FastJsonRedisSerializer(Object.class);
+        FastJsonRedisSerializer fastJsonRedisSerializer = this.fastJsonRedisSerializer();
+        Jackson2JsonRedisSerializer jackson2JsonRedisSerializer = this.jackson2JsonRedisSerializer();
         // value值的序列化采用fastJsonRedisSerializer
-        template.setValueSerializer(fastJsonRedisSerializer);
-        template.setHashValueSerializer(fastJsonRedisSerializer);
+        template.setValueSerializer(jackson2JsonRedisSerializer);
+        template.setHashValueSerializer(jackson2JsonRedisSerializer);
         // key的序列化采用StringRedisSerializer
         template.setKeySerializer(new StringRedisSerializer());
         template.setHashKeySerializer(new StringRedisSerializer());
-
-        template.setConnectionFactory(redisConnectionFactory);
         return template;
     }
 
@@ -111,6 +100,44 @@ public class CacheConfig extends CachingConfigurerSupport {
         template.setConnectionFactory(redisConnectionFactory);
         return template;
     }
+    /**
+     * 通过自定义配置构建Redis的Json序列化器
+     * @return Jackson2JsonRedisSerializer对象
+     */
+    private FastJsonRedisSerializer<Object> fastJsonRedisSerializer(){
+        FastJsonRedisSerializer<Object> fastJsonRedisSerializer =
+                new FastJsonRedisSerializer<>(Object.class);
+        ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);
+        objectMapper.configure(MapperFeature.USE_ANNOTATIONS, false);
+        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        objectMapper.configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false);
+        // 此项必须配置，否则会报java.lang.ClassCastException: java.util.LinkedHashMap cannot be cast to XXX
+        objectMapper.enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL, JsonTypeInfo.As.PROPERTY);
+        objectMapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
+        fastJsonRedisSerializer.setObjectMapper(objectMapper);
+        return fastJsonRedisSerializer;
+    }
+
+    /**
+     * 通过自定义配置构建Redis的Json序列化器
+     * @return Jackson2JsonRedisSerializer对象
+     */
+    private Jackson2JsonRedisSerializer<Object> jackson2JsonRedisSerializer(){
+        Jackson2JsonRedisSerializer<Object> jackson2JsonRedisSerializer =
+                new Jackson2JsonRedisSerializer<>(Object.class);
+        ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);
+        objectMapper.configure(MapperFeature.USE_ANNOTATIONS, false);
+        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        objectMapper.configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false);
+        // 此项必须配置，否则会报java.lang.ClassCastException: java.util.LinkedHashMap cannot be cast to XXX
+        objectMapper.enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL, JsonTypeInfo.As.PROPERTY);
+        objectMapper.setSerializationInclusion(JsonInclude.Include.NON_NULL);
+        jackson2JsonRedisSerializer.setObjectMapper(objectMapper);
+        return jackson2JsonRedisSerializer;
+    }
+
 
 
     /**

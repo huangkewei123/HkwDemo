@@ -12,6 +12,7 @@ import org.springframework.cache.annotation.Caching;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.annotation.Resource;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -21,7 +22,7 @@ public class PersonServiceImpl implements PersonService {
 
     private Logger logger = Logger.getLogger("PersonService");
 
-    @Autowired
+    @Resource
     private PersonMapper personMapper;
 
 
@@ -81,7 +82,7 @@ public class PersonServiceImpl implements PersonService {
     @Caching(cacheable = @Cacheable("users"), evict = { @CacheEvict("cache2"),
             @CacheEvict(value = "cache3", allEntries = true) })
     public Person find(Integer id) {
-        return null;
+        return personMapper.selectByPrimaryKey(id);
     }
 
     @Override

@@ -24,6 +24,8 @@ public interface PersonService {
 
     public Person findPersonById(Integer id);
 
+    public Person find(Integer id);
+
     public String cacheEvict(Integer id);
 
     public void update(Person person);

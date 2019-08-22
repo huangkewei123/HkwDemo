@@ -63,7 +63,6 @@ public class TestController {
         personService.update(person);
 
         List<Person> list = personService.findAll();
-
         Person person1 = personService.findPersonById(1);
 
         json.put("person1" , JSONObject.toJSONString(person1));
