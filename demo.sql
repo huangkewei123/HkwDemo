@@ -175,3 +175,21 @@ INSERT INTO `user_role` VALUES ('7', '1', '1');
 INSERT INTO `user_role` VALUES ('8', '2', '1');
 INSERT INTO `user_role` VALUES ('9', '3', '1');
 INSERT INTO `user_role` VALUES ('10', '6', '2');
+
+DROP TABLE IF EXISTS `attachment`;
+CREATE TABLE `attachment` (
+  `fileId` int(11) NOT NULL AUTO_INCREMENT,
+  `fileName` varchar(100) DEFAULT NULL,
+  `filePath` varchar(400) DEFAULT NULL,
+  `fileType` varchar(10) DEFAULT NULL,
+  `classify` varchar(20) DEFAULT NULL,
+  `appId` varchar(36) DEFAULT NULL,
+  `fileSize` int(11) DEFAULT NULL,
+  `upTime` datetime DEFAULT NULL,
+  `lastModify` datetime DEFAULT NULL,
+  `lastModifier` varchar(36) DEFAULT NULL,
+  `ext` varchar(200) DEFAULT NULL,
+  `seqno` int(2) DEFAULT '0',
+  PRIMARY KEY (`fileId`)
+) ENGINE=InnoDB AUTO_INCREMENT=16256 DEFAULT CHARSET=utf8;
+

@@ -39,3 +39,6 @@ shiro使用了自定义过滤器com.example.demo.jee.filter.MyFormAuthentication
 
 #加入lombok
 plugin中添加lombok插件
+
+#附件实体添加
+但是需要生成mapper和service
