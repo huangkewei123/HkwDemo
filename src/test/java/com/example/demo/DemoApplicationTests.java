@@ -5,15 +5,14 @@ import com.example.demo.manipulation.entity.base.Person;
 import com.example.demo.manipulation.service.base.PersonService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.web.context.WebApplicationContext;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 @RunWith(SpringRunner.class)
@@ -21,11 +20,11 @@ import java.util.List;
 @WebAppConfiguration
 public class DemoApplicationTests {
 
-
-    @Autowired
+    Logger logger = LoggerFactory.getLogger(DemoApplicationTests.class);
+    @Resource
     PersonService personService;
 
-    @Autowired
+    @Resource
     private RedisTemplate redisTemplate;
 
     @Test
@@ -37,6 +36,12 @@ public class DemoApplicationTests {
         person.setAddress("打发斯蒂芬");
         JSONObject json = (JSONObject)JSONObject.toJSON(person);
         redisTemplate.opsForValue().set("name" , json);
+
+        logger.info("infoA-------------测试日志");
+        logger.warn("infoA-------------测试日志");
+        logger.debug("infoA-------------测试日志");
+        logger.error("infoA-------------测试日志");
+
         /*List<String> list =new ArrayList<>();
         list.add("a");
         list.add("b");
