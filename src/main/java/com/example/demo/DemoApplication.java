@@ -7,11 +7,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.PropertySource;
 
 @SpringBootApplication
-@MapperScan(basePackages = "com.example.demo.manipulation.mapper")
+@MapperScan(basePackages = {"com.example.demo.manipulation.mapper","com.gitee.sunchenbin.mybatis.actable.dao.*"})
 @ServletComponentScan(basePackages = "com.example.demo.jee.filter")
+@ComponentScan({"com.gitee.sunchenbin.mybatis.actable.manager.*" , "com.example.demo"})
 public class DemoApplication  extends SpringBootServletInitializer {
 
     @Override
