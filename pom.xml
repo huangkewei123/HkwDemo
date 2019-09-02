@@ -327,6 +327,12 @@
             <version>3.6</version>
         </dependency>
 
+        <!-- RabitMq Strat -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
+        </dependency>
+        <!-- RabitMq End -->
     </dependencies>
 
     <build>
