@@ -1,0 +1,57 @@
+server:
+  port: 8080
+  servlet:
+    session:
+      timeout: 15m
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/demo?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+    username: root
+    password: 123456
+  thymeleaf:
+    cache: false
+    encoding: UTF-8
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML5
+    servlet:
+      content-type: text/html
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    timeout: 3s
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1s
+        max-idle: 8
+        min-idle: 0
+  application:
+    name: spirng-boot-rabbitmq
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  returnPageInfo: check
+  params:
+    count: countSql
+
+mybatis:
+  type-aliases-package: com.example.demo.manipulation.entity
+  configuration:
+    cache-enabled: true
+  table:
+    auto: update
+  database:
+    type: mysql
+  model:
+    pack: com.example.demo.manipulation.entity
+  mapperLocations: classpath*:/mapper/*/*Mapper.xml,classpath*:com/gitee/sunchenbin/mybatis/actable/mapping/*/*.xml
