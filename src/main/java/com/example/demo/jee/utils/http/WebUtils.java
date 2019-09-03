@@ -1,4 +1,6 @@
-package com.example.demo.jee.utils;
+package com.example.demo.jee.utils.http;
+
+import com.example.demo.jee.utils.StringUtils;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -12,7 +14,6 @@ import java.net.URLEncoder;
 import java.security.SecureRandom;
 import java.security.cert.Certificate;
 import java.security.cert.CertificateException;
-import java.security.cert.CertificateFactory;
 import java.security.cert.X509Certificate;
 import java.util.HashMap;
 import java.util.Map;

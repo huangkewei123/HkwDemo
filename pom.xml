@@ -81,12 +81,6 @@
             <version>1.4.0</version>
         </dependency>
 
-        <!-- 导入java ee jar 包 -->
-        <!--<dependency>
-            <groupId>javax</groupId>
-            <artifactId>javaee-api</artifactId>
-            <version>8.0</version>
-        </dependency>-->
         <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -113,13 +107,31 @@
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
-            <version>4.5.3</version>
+            <version>4.5.9</version>
         </dependency>
         <!-- 提供FileBody、StringBody和MultipartEntity 使用httpClient上传文件需要的类 -->
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpmime</artifactId>
-            <version>4.5.3</version>
+            <version>4.5.9</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient-cache</artifactId>
+            <version>4.5.9</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpcore</artifactId>
+            <version>4.4.11</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
+            <version>4.4</version>
         </dependency>
 
         <dependency>
@@ -135,14 +147,6 @@
             <optional>true</optional>
             <scope>true</scope>
         </dependency>
-
-        <!-- https://mvnrepository.com/artifact/junit/junit -->
-<!--?        <dependency>-->
-<!--?            <groupId>junit</groupId>-->
-<!--?            <artifactId>junit</artifactId>-->
-<!--?            <version>4.12</version>-->
-<!--?            <scope>test</scope>-->
-<!--?        </dependency>-->
 
         <dependency>
             <groupId>org.springframework</groupId>
@@ -282,14 +286,14 @@
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.jsoup/jsoup -->
-        <!--?html解析工具-->
+        <!--html解析工具-->
         <dependency>
             <groupId>org.jsoup</groupId>
             <artifactId>jsoup</artifactId>
             <version>1.12.1</version>
         </dependency>
 
-        <!--?XML和实体互转-->
+        <!--XML和实体互转-->
         <dependency>
             <groupId>com.thoughtworks.xstream</groupId>
             <artifactId>xstream</artifactId>
@@ -302,7 +306,7 @@
             <version>1.6.1</version>
         </dependency>
 
-        <!--?根据实体自动创建表结构-->
+        <!--根据实体自动创建表结构-->
         <!-- https://mvnrepository.com/artifact/com.gitee.sunchenbin.mybatis.actable/mybatis-enhance-actable-->
         <dependency>
             <groupId>com.gitee.sunchenbin.mybatis.actable</groupId>
@@ -332,6 +336,14 @@
             <artifactId>spring-boot-starter-amqp</artifactId>
         </dependency>
         <!-- RabitMq End -->
+
+        <!-- 谷歌包，newhashmap的时候省去写泛型 -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>28.1-jre</version>
+        </dependency>
+
     </dependencies>
 
     <build>
