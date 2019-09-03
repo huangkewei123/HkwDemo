@@ -1,7 +1,6 @@
 package com.example.demo.jee.utils.SpiderUtile;
 
 import com.example.demo.jee.constants.SysConstants;
-import com.example.demo.jee.utils.LoggerUtil;
 import com.example.demo.jee.utils.SpiderUtile.bean.Chapter;
 import com.example.demo.jee.utils.SpiderUtile.pic.PicDownLoad;
 import com.example.demo.manipulation.controller.TestController;
