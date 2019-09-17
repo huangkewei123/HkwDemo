@@ -344,6 +344,26 @@
             <version>28.1-jre</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.itextpdf</groupId>
+            <artifactId>itext-pdfa</artifactId>
+            <version>5.5.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.hynnet</groupId>
+            <artifactId>jacob</artifactId>
+            <version>1.18</version>
+        </dependency>
+
+        <!-- 文件生成工具  -->
+        <dependency>
+            <groupId>com.aspose</groupId>
+            <artifactId>aspose-words</artifactId>
+            <version>18.10</version>
+            <classifier>jdk16</classifier>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -376,6 +396,12 @@
             </resource>
         </resources>-->
     </build>
-
+    <repositories>
+        <repository>
+            <id>AsposeJavaAPI</id>
+            <name>Aspose Java API</name>
+            <url>http://artifact.aspose.com/repo/</url>
+        </repository>
+    </repositories>
 
 </project>
