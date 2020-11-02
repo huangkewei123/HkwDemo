@@ -42,3 +42,7 @@ plugin中添加lombok插件
 
 #附件实体添加
 但是需要生成mapper和service
+
+#加入docker
+pom中加入相关配置
+Dockerfile文件加入

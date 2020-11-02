@@ -7,7 +7,7 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/demo?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+    url: jdbc:mysql://192.168.194.129:3306/demo?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
     username: root
     password: 123456
   thymeleaf:
@@ -33,9 +33,9 @@ spring:
     name: spirng-boot-rabbitmq
   rabbitmq:
     host: localhost
-    port: 5672
-    username: guest
-    password: guest
+    port: 15672
+    username: admin
+    password: admin
 
 pagehelper:
   helperDialect: mysql
